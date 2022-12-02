@@ -1,0 +1,80 @@
+.dvb-hover-bg {
+    position: absolute;
+    inset: 0;
+    width: 101%;
+    height: 101%;
+    border-radius: inherit;
+    background-color: red;
+    z-index: -2;
+    pointer-events: none;
+  
+    &.light {
+      background-color: #fff;
+  
+      .curtain-wrapper .curtain {
+        &.curtain-1 {
+          background-color: rgba($color: #000, $alpha: 0.1);
+        }
+        &.curtain-2 {
+          background-color: rgba($color: #000, $alpha: 0.05);
+        }
+      }
+    }
+  }
+  
+  .curtain-wrapper {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    border-radius: inherit;
+    overflow: hidden;
+  margin: -2px;
+    .curtain {
+      position: absolute;
+      inset: -1px;
+      z-index: -10;
+      border-radius: inherit;
+      transform: translateX(-100%);
+    
+      &.curtain-1 {
+        background-color: rgba($color: #fff, $alpha: 0.1);
+      }
+      &.curtain-2 {
+        background-color: rgba($color: #fff, $alpha: 0.05);
+      }
+    }
+  }
+  .my-btn-grad{
+    background: linear-gradient(101deg, #fc2fa4 0%, #902dff 57%, #4b4cf6 100%) !important;
+  }
+  .todayspick-btn-color{
+    background: #262626 !important;
+  }
+  .login-btn-color{
+    background:  white !important;
+  }
+  .contact-btn-color{
+    background: white !important;
+    color: black !important;
+  }
+  .creator-hero-btn-color{
+    background: transparent !important;
+    border: 5px solid rgba(255, 255, 255, 1) !important;
+    // padding: 40px 100px !important;
+  }
+  .btn-area {
+    z-index: 10;
+  }
+  .hero-creators-div .curtain-wrapper .curtain.curtain-1{
+    background-color: rgba(255, 255, 255, 0.8);
+  }
+  .hero-creators-div .curtain-wrapper .curtain.curtain-2{
+    background-color: rgba(255, 255, 255, 1);
+  }
+  .hero-creators-div .btn-threejs:hover + .my-btns-text{
+    mix-blend-mode: difference !important;
+  }
+  .nft-card-buy-btn-color .curtain-wrapper .curtain.curtain-1 , .nft-card-buy-btn-color .curtain-wrapper .curtain.curtain-2{
+
+    background-color: transparent;
+  }

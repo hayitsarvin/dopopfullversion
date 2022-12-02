@@ -1,0 +1,123 @@
+.footer__1 {
+  padding: 75px 0 50px;
+  margin-top: 100px;
+  border-top:none;
+  background-color: $color_white;
+  @include tablet_vert_screen {
+    padding: 70px 0 30px;
+    margin-top: 70px;
+  }
+  .footer_logo {
+    img {
+      height: 3rem;
+    }
+  }
+  .footer__text {
+    max-width: 30rem;
+    margin-left: 0;
+  }
+  .footer__social {
+    display: flex;
+    a,
+    i {
+      color: $color_black;
+      font-size: 1.2rem;
+    }
+    i {
+      height: 44px;
+      width: 44px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 100%;
+      background: $color_stroke;
+      transition: all 0.25s ease-in-out;
+  
+      &:hover {
+        background: $color_white;
+        box-shadow: $shadow_1;
+
+      }
+    }
+  }
+  .footer__logo .footer-logo{
+    height: 1.2rem;
+  }
+  .footer__logo .footer-brand{
+    height: 1rem;
+    margin-left: 10px;
+  }
+
+  .footer-desc {
+    margin-bottom: 2rem;
+
+    .logo {
+      margin-bottom: 1rem;
+
+      img {
+        height: 2.5rem;
+      }
+    }
+  
+    .social-footer {
+      margin-top: 1rem;
+
+      a {
+        img {
+          width: 18px;
+          margin-right: 8px;
+        }
+        ion-icon {
+          font-size: 25px;
+          color: white;
+        }
+      }
+    }
+  }
+
+  .footer__title {
+    font-size: 1.1rem;
+    position: relative;
+    margin-bottom: 2.2rem;
+    font-weight: 600;
+    font-size: 22px;
+  }
+
+  .footer__list {
+    margin-bottom: 2rem;
+
+    li {
+      margin-bottom: 1rem;
+
+      a {
+        color: #87898C;
+        font-weight: 500;
+        font-size: 16px;
+      
+      }
+    }
+  }
+
+  .copyright {
+    margin-top: 35px;
+    display: block;
+    font-size: 11px;
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 0;
+    .copyright-logo{
+      height: 2.2rem;
+      margin-left: 10px;
+      padding-bottom: 10px;
+    }
+    a {
+      padding: 2rem 0 2rem;
+      font-size: 1rem;
+      margin: 0;
+      color: #87898C;
+    }
+  }
+  a.copyright{
+    color: #87898C !important;
+ 
+  }
+}

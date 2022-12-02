@@ -1,0 +1,36 @@
+.register {
+    background:transparent ;
+    background-size: cover;
+    // background-attachment: fixed;
+    margin-bottom: -100px;
+    background-repeat: no-repeat;
+    .terms-check{
+        text-align: left !important;
+        font-weight: 400;
+        span{
+            font-weight: 600 !important;
+            text-decoration: none;
+        }
+    }
+    .left_part {
+        position: fixed;
+        left: 0;
+        top: 0;
+        height: 100vh;
+        width: inherit;
+        background-repeat: no-repeat;
+        background-size: cover;
+        color: white;
+    }
+    .right_part {
+        padding: 200px 0;
+    }
+}
+
+.login {
+    height: 100vh;
+    margin-bottom: -100px;
+    @include tablet_vert_screen {
+        height: auto;
+    }
+}
