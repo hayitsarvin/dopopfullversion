@@ -3,6 +3,7 @@ import React from 'react'
 const GlobalCommunity = () => {
     return (
         <div className="container">
+
 			
 				<div className="community">
 				<div className="back-img-div" style={{top: "unset"}}>

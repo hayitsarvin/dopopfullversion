@@ -37,6 +37,7 @@ function useOutsideAlerter(ref, set) {
 	}, [ref]);
   }
 const Header = () => {
+	const header = document.querySelector(".header__1");
 	const headerRef = useRef();
 const q = gsap.utils.selector(headerRef);
 	const [hideMode , setHideMode] = useState(false)

@@ -88,13 +88,7 @@ function PopularCreators(props) {
 		});
 
 		return () => {
-			// if(ani1.ScrollTrigger){
-			// 	ani1.ScrollTrigger.kill(true);
-
-			// }
-			// if(ani2.ScrollTrigger){
-			// 	ani2.ScrollTrigger.kill(true);
-			// }
+			
 			ani1.scrollTrigger.kill(true);
 			ani2.scrollTrigger.kill(true);
 		}

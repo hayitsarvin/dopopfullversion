@@ -53,9 +53,9 @@ const Home = () => {
        
      
             const popularSection  = gsap.to(CSSRulePlugin.getRule(".threejs-back:after"), {
-              // opacity: 0.2,
-              mixBlendMode:"overlay",
-              immediateRender: false,
+              
+              backgroundColor:"rgb(250,0,150)",
+              // immediateRender: false,
               scrollTrigger: {
                 trigger: document.querySelector("#popularCreators"),
                 scrub: true,
@@ -66,32 +66,48 @@ const Home = () => {
             });
            const marketsection = gsap.to(CSSRulePlugin.getRule(".threejs-back:after"), {
               
-            mixBlendMode:"overlay",
               opacity: 1,
               backgroundColor:"red",
-              immediateRender: false,
+              // immediateRender: false,
               scrollTrigger: {
                 trigger: document.querySelector(".market-data-page"),
                 scrub: true,
                 start:'top-=20 center+=100',
                 end: 'bottom top',
+                onEnter:() => gsap.to(CSSRulePlugin.getRule(".threejs-back .threejs-dark-back") , {opacity:0}),
+                onLeaveBack:() => gsap.to(CSSRulePlugin.getRule(".threejs-back .threejs-dark-back") , {opacity:1}),
                 scroller: !x.matches ? "#viewport" : null,
               }
             });
-          
-            const todaySection = gsap.to(CSSRulePlugin.getRule(".threejs-back:after"), {
-              opacity: 1,
-              mixBlendMode:"darken",
-              backgroundColor:"black",
-              immediateRender: false,
-              scrollTrigger: {
-                trigger: document.querySelector(".back-animation-today-div"),
-                scrub: true,
-                start:'top center',
-                end: 'bottom top',
-                scroller: !x.matches ? "#viewport" : null,
-              }
-            });
+
+            const todaySection = gsap.to(CSSRulePlugin.getRule(".threejs-back .threejs-dark-back"), {
+              
+              
+                opacity: 1,
+
+                // immediateRender: false,
+                scrollTrigger: {
+                      trigger: document.querySelector(".back-animation-today-div"),
+                      scrub: true,
+                      start:'top center',
+                      end: 'bottom top',
+                      onEnterBack:() => gsap.to(CSSRulePlugin.getRule(".threejs-back .threejs-dark-back"), {opacity:1}),
+                      scroller: !x.matches ? "#viewport" : null,
+                    }
+              });
+            // const todaySection = gsap.to(CSSRulePlugin.getRule(".threejs-back:after"), {
+            //   opacity: 1,
+            //   mixBlendMode:"darken",
+            //   backgroundColor:"black",
+            //   immediateRender: false,
+            //   scrollTrigger: {
+            //     trigger: document.querySelector(".back-animation-today-div"),
+            //     scrub: true,
+            //     start:'top center',
+            //     end: 'bottom top',
+            //     scroller: !x.matches ? "#viewport" : null,
+            //   }
+            // });
              
        
     return() => {

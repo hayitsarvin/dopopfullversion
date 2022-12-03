@@ -299,11 +299,16 @@ animate();
 		(
 <div id="container" className="threejs-back" data-scroll data-scroll-sticky data-scroll-target="#stick" >
 		<div  className="threejs-grad"></div>
+
+	<div className='threejs-dark-back'></div>
+
 		</div>	
 		):
 		(
 			<div id="container" className="threejs-back"  >
 		<div  className="threejs-grad"></div>
+
+
 		</div>	
 		)
 	}

@@ -2650,6 +2650,8 @@ a.btn-primary{
        
         /* padding-right: 70px !important; */
         margin-top: 0px !important;
+        margin-left: 10px;
+        margin-right: 10px;
     }
     .hero-nfts-text-title{
         font-size: 29px !important;
@@ -4970,8 +4972,8 @@ body .card__item a , body .card__item .details ,body .sc-card-product ,body .sc-
     /* margin-top: 75px !important; */
     /* padding: 15px; */
     top: -8px;
-    left: -8px;
-    right: -8px;
+    left: 0px;
+    right: 0px;
     bottom: -8px;
 }
 .hero-nfts-border-div{
@@ -5282,4 +5284,13 @@ div.hero-btn-div:hover .my-btns-text{
 }
 .is__dark .modal{
     height: 100vh;
+}
+.threejs-back .threejs-dark-back{
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    z-index: 1;
+    position: absolute;
+    opacity: 0;
+    top: 0;
 }
