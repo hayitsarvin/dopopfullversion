@@ -6,38 +6,42 @@ import { listUser } from '../actions/userActions'
 import CurtainBtn from '../helpers/CurtainBtn'
 const HeroPopularCreators = () => {
 	useEffect(() => {
+		var mobileCheck = window.matchMedia("(max-width: 992px)")
 
-		const hoverBg =  document.querySelector("#btn-three-creators-test")
-		console.log("creator" , hoverBg)
-		const onMouseHover = () => {
-
-			gsap.to( hoverBg, {
-			  scaleX: 1.05,
-			  scaleY: 0.97,
-			  ease: 'elastic.out(1, 0.4)',
-			  duration: 1.3
-			})
-		
-			// Curtains passing in bg
+		if(!mobileCheck.matches){
+			const hoverBg =  document.querySelector("#btn-three-creators-test")
 			
-		  }
-
-		  const onMouseOut = () => {
-
-			// Jelly Effect for BG
-			gsap.to( hoverBg, {
-			  scaleX: 1,
-			  scaleY: 1,
-			  ease: 'elastic.out(1, 0.4)',
-			  duration: 1.3
-			})
+			const onMouseHover = () => {
+	
+				gsap.to( hoverBg, {
+				  scaleX: 1.05,
+				  scaleY: 0.97,
+				  ease: 'elastic.out(1, 0.4)',
+				  duration: 1.3
+				})
+			
+				// Curtains passing in bg
+				
+			  }
+	
+			  const onMouseOut = () => {
+	
+				// Jelly Effect for BG
+				gsap.to( hoverBg, {
+				  scaleX: 1,
+				  scaleY: 1,
+				  ease: 'elastic.out(1, 0.4)',
+				  duration: 1.3
+				})
+			
+				// Curtains passing in bg
+			
+			
+			  }
+			  hoverBg.addEventListener('mouseover', onMouseHover)
+			hoverBg.addEventListener('mouseout', onMouseOut)
+		}
 		
-			// Curtains passing in bg
-		
-		
-		  }
-		  hoverBg.addEventListener('mouseover', onMouseHover)
-		hoverBg.addEventListener('mouseout', onMouseOut)
 	},[])
 
 	const dispatch = useDispatch()
@@ -103,7 +107,7 @@ const [deviceChange , setDeviceChange] = useState(x.matches)
 			  const x = e.pageX - slider.offsetLeft;
 			  const walk = (x - startX) * 2; //scroll-fast
 			  slider.scrollLeft = scrollLeft - walk;
-			  console.log(walk);
+			  
 			});
 		}
 		

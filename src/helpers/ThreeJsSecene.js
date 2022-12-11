@@ -245,13 +245,13 @@ animate();
     return () => destroyer()
     },[] )
     function destroyer(bubbleContainer) {
-		console.log("1",onWindowResize)
+		
 		if(onWindowResize){
-		console.log("2",onWindowResize)
+		
 
 			window.removeEventListener("resize", onWindowResize, false);
 		}
-		console.log("scene" , scene)
+	
 		if(scene){
 			scene = null;
 
@@ -301,6 +301,7 @@ animate();
 		<div  className="threejs-grad"></div>
 
 	<div className='threejs-dark-back'></div>
+	<div className='threejs-blue-back'></div>
 
 		</div>	
 		):

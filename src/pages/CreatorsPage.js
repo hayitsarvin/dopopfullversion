@@ -39,8 +39,7 @@ function useOutsideAlerter(ref) {
   }
 const CreatorsPage = () => {
 	closeOrderTap = (e) => {
-		console.log(e)
-
+		
 
 		if(e.className == "more"){
 			setReportModal(false)

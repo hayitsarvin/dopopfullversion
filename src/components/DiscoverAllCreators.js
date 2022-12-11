@@ -42,9 +42,9 @@ const DiscoverAllCreators = () => {
 		// Popup.style.left = `${titlePopup.getClientRects()[0].left}px`;
 		// Popup.style.top = `${titleDiv.getBoundingClientRects()[0].bottom}px`;
 
-		console.log("1" ,$(".section__creators .discover-span").offset() ,$(".section__creators .discover-span").outerHeight(true))
+		
 		gsap.set(Popup , {left:($(".section__creators .discover-span").position().left + (x.matches ? 12 : 0)), top: ($(".section__creators .discover-span").position().top + $(".section__creators .discover-span").outerHeight(true)) + 10})
-		console.log("Pop",Popup)
+		
 	},[x])
 	closeOrderTap = () => {
 		setOrderOpen(false)

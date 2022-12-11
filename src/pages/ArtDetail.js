@@ -43,7 +43,7 @@ function useOutsideAlerter(ref) {
   }
 const ArtDetail = () => {
 	closeOrderTap = (e) => {
-		console.log(e)
+		
 
 
 		if(e.className == "more"){

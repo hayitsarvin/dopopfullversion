@@ -28,32 +28,31 @@ function useOutsideAlerter(ref) {
 const DiscoverCreatorCart = (props) => {
 	closeOrderTap = (e) => {
 
-console.log(e.className)
 		if(e.className == "icon icon-more"){
 			
 			setShareModal(false)
-			console.log("first")
+			
 
 
 		}else if( e.className == "icon icon-share"){
 			setReportModal(false)
-			console.log("2")
+			
 
 
 		}else 
 		if(e.className == "ri-more-fill") {
 			setShareModal(false)
-			console.log("3")
+			
 
 
 		}else if( e.className == "ri-share-line"){
 			setReportModal(false)
-			console.log("4")
+			
 
 		}else{
 			setShareModal(false)
 			setReportModal(false)
-			console.log("5")
+			
 
 
 		}

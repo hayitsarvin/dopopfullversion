@@ -170,9 +170,9 @@ const TodaysPick = () => {
 		const PopupTest = document.querySelector(".todaysPick .explore-mode-div")
 		// PopupTest.style.left = `269px`;
 		// gsap.set(PopupTest , {left: `${titlePopup.getClientRects()[0].left}px` , top: `${titlePopup.getClientRects()[0].bottom }px`})
-		console.log("1" ,$(".todaysPick  .explore-span").position()  )
+		
 		gsap.set(PopupTest , {left:($(".todaysPick  .explore-span").position().left + 10) + "px" , top: (($(".todaysPick  .explore-span").position().top + $(".todaysPick  .explore-span").height() + 10) + "px" )})
-		console.log("2" ,$(".todaysPick .explore-mode-div").position()  )
+		
 
 	}
 	// useEffect(() => {

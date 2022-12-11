@@ -8,10 +8,10 @@ const DarkMode = (props) => {
     modeHandle = !modeHandle
     if(modeHandle) {
       darkMode()
-      console.log("dark")
+     
     }else{
       lightMode()
-      console.log("light")
+      
     }
   }
   var x = window.matchMedia("(max-width: 992px)")

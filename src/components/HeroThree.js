@@ -51,40 +51,44 @@ console.log(MouseMove)
 		
 	},[x])
 	useEffect(() => {
-
-		const hoverBg =  document.querySelector("#btn-test-three")
+		if(!deviceChange){
+			const hoverBg =  document.querySelector("#btn-test-three")
 		
-		const onMouseHover = () => {
-
-			gsap.to( hoverBg, {
-			  scaleX: 1.05,
-			  scaleY: 0.97,
-			  ease: 'elastic.out(1, 0.4)',
-			  duration: 1.3
-			})
-		
-			// Curtains passing in bg
+			const onMouseHover = () => {
+	
+				gsap.to( hoverBg, {
+				  scaleX: 1.05,
+				  scaleY: 0.97,
+				  ease: 'elastic.out(1, 0.4)',
+				  duration: 1.3
+				})
 			
-		  }
+				// Curtains passing in bg
+				
+			  }
+	
+			  const onMouseOut = () => {
+	
+				// Jelly Effect for BG
+				gsap.to( hoverBg, {
+				  scaleX: 1,
+				  scaleY: 1,
+				  ease: 'elastic.out(1, 0.4)',
+				  duration: 1.3
+				})
+			
+				// Curtains passing in bg
+			
+			
+			  }
+			  hoverBg.addEventListener('mouseover', onMouseHover)
+			hoverBg.addEventListener('mouseout', onMouseOut)
+		}
 
-		  const onMouseOut = () => {
-
-			// Jelly Effect for BG
-			gsap.to( hoverBg, {
-			  scaleX: 1,
-			  scaleY: 1,
-			  ease: 'elastic.out(1, 0.4)',
-			  duration: 1.3
-			})
 		
-			// Curtains passing in bg
-		
-		
-		  }
-		  hoverBg.addEventListener('mouseover', onMouseHover)
-		hoverBg.addEventListener('mouseout', onMouseOut)
 	},[])
 	useEffect(() => {
+		if(!deviceChange){
 		const heroBtnHover = document.querySelector('.hero-btn-div .my-btns-div');
 		const heroBtnHoverText = document.querySelector('.hero-btn-div .my-btns-div .my-btns-text');
 		heroBtnHover.addEventListener('mouseover', (e) => {
@@ -98,7 +102,8 @@ console.log(MouseMove)
 		// 			mixBlendMode:"normal"
 		// 		})
 		// });
-	})
+}
+	},[])
 
 	useEffect(() => {
 		if(x.matches){
@@ -135,7 +140,7 @@ console.log(MouseMove)
 			  const x = e.pageX - slider.offsetLeft;
 			  const walk = (x - startX) * 2; //scroll-fast
 			  slider.scrollLeft = scrollLeft - walk;
-			  console.log(walk);
+			  
 			});
 		}
 		
@@ -181,7 +186,7 @@ console.log(MouseMove)
 			ease: "Power3.inOut",
 			duration: .3,
 		  });
-		  console.log("Dasdfdfsdfdfsdf")
+		  
 	}
 	
 

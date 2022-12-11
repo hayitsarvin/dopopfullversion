@@ -21,6 +21,59 @@ function NftCart(props) {
 	const {loading:loadingUsers , users} = userList
     const cartHoverAnimation = useRef()
 	const q = gsap.utils.selector(cartHoverAnimation)
+    useEffect(()=> {
+        const cardDiv = cartHoverAnimation.current
+     
+
+       
+        cardDiv.addEventListener("mouseenter", () => {
+           
+           const anim1 = gsap.fromTo(q("svg rect.color"),{
+                strokeDashoffset:1550,
+                strokeDasharray: 1550,
+              duration:1.5,
+                stagger:0.15,
+                ease:"power3.out"
+            },
+            {
+                strokeDashoffset:-450,
+                strokeDasharray: 550,
+              duration:1.5,
+                stagger:0.15,
+                ease:"power3.out"
+            })
+            gsap.to(q("svg rect.color"),
+            {
+                strokeDashoffset:-1550,
+                strokeDasharray: 1550,
+                duration:2,
+                delay:1,
+                  stagger:0.15,
+                ease:"power3.out"
+            })
+            
+            // const anim2 = gsap.to(q("svg rect.color"),{
+            //     strokeDashoffset:-1550,
+            //   duration:1.5,
+            //      delay:0.6,
+            //      stagger:-0.05,
+            //        ease:"power3.out"
+            // })
+            
+        })
+        cardDiv.addEventListener("mouseleave", () => {
+            
+            gsap.to(q("svg rect.color"),
+            {
+                strokeDashoffset:-1550,
+                strokeDasharray: 1550,
+               
+            })
+               
+        })
+    
+        
+    },[])
     // useEffect(() => {
         // const mouseCircle = document.querySelector(".mouse-circle")
         // const mouseText = document.querySelector(".mouse-text")
@@ -107,7 +160,23 @@ function NftCart(props) {
 
     return (
         <div className="slider-item todays-pick-card  my-cart-padding" ref={cartHoverAnimation}>
+         
 <div className="sc-card-product back-blur back-glass-effect bg-color-dark bg-cart-dark-color not-blur-bg" id={"a"+props.nft._id}>
+<svg className='card-border-svg'>
+      <rect rx="20" ry="20" className="color green">
+        
+      </rect>
+      <rect rx="20" ry="20" className="color blue">
+      </rect>
+      <rect rx="20" ry="20" className="color red">
+      </rect>
+      
+      <rect rx="20" ry="20" className="color yellow">
+      </rect>
+{/*       
+      <rect rx="25" ry="25" class="back-color">
+      </rect> */}
+      </svg>
 <div className="card-media active">
 <Link to={`/artdetail/${props.nft._id}`}>
 <img className="card-nft-image card-nft-hover-img" src={props.nft.image} alt="Image" />

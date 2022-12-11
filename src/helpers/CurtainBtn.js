@@ -5,13 +5,18 @@ import gsap from 'gsap'
 import './curtain.scss'
 
 export default function CurtainBtn({ mode = '',btnHero }) {
-
+  
   const hoverBg = useRef(null)
 
   const curtain1 = useRef(null)
   const curtain2 = useRef(null)
 
   useEffect(() => {
+  var mobileCheck = window.matchMedia("(max-width: 992px)")
+  if(!mobileCheck.matches){
+
+  }
+
     
     if( window.innerWidth > 768 && hoverBg.current ) {
       hoverBg.current.parentElement.addEventListener('mouseover', onMouseHover)
@@ -112,9 +117,14 @@ export default function CurtainBtn({ mode = '',btnHero }) {
   return (
     <>
     
-   
-    <span onMouseMove={btnmove} onMouseLeave={mouseLeave}  className="btn-area" >
+   {window.innerWidth > 768 ?  
+   <span onMouseMove={btnmove} onMouseLeave={mouseLeave}  className="btn-area" >
+   </span>
+  :
+  <span  className="btn-area" >
     </span>
+  }
+    
 
    
 

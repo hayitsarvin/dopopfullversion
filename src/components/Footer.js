@@ -106,9 +106,9 @@ const Footer = () => {
 							
 							</ul>
 						</div> */}
-						<div class="col-xl-2 col-lg-2 d-xl-block d-lg-none col-6">
-							<h6 class="footer__title">Pages</h6>
-							<ul class="footer__list">
+						<div className="col-xl-2 col-lg-2 d-xl-block d-lg-none col-6">
+							<h6 className="footer__title">Pages</h6>
+							<ul className="footer__list">
 								<li> <a href="/contact">Contact Us</a></li>
 							</ul>
 						</div>
@@ -134,9 +134,11 @@ const Footer = () => {
 									<div>
 									<a href="https://deveb.co"  id="copyright-web" target="_blank" className="copyright" style={{marginTop : "105px "  }}>
 									Design & Development
+									
 									<a href="https://deveb.co" target="_blank">
 									<img src="/img/logos/ourLogoWhite.svg" className="copyright-logo" id="copyright-logo-f" />
 									</a>
+									
 								</a>
 								</div>
 								)

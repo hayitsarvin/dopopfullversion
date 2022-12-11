@@ -37,7 +37,6 @@ function useOutsideAlerter(ref, set) {
 	}, [ref]);
   }
 const Header = () => {
-	const header = document.querySelector(".header__1");
 	const headerRef = useRef();
 const q = gsap.utils.selector(headerRef);
 	const [hideMode , setHideMode] = useState(false)
@@ -72,6 +71,9 @@ window.addEventListener('resize', () => {
 		
 	},[x])
 	useEffect(() => {
+	const header = document.querySelector(".header__1");
+
+
 		if(location.pathname.includes("/creators/") || location.pathname.includes("/artdetail/")){
 			
 			header.classList.add("active")
@@ -79,12 +81,14 @@ window.addEventListener('resize', () => {
 	}
 	const scroll = new LocomotiveScroll();
 	scroll.on('scroll', (args) => {
-		console.log("func",args)
+		
 	});
 	
 	
 	})
 	useEffect(() => {
+	const header = document.querySelector(".header__1");
+
 		if(x.matches){
 			header.classList.add("active")
 
@@ -97,11 +101,10 @@ window.addEventListener('resize', () => {
 	},[x])
 	const burgerClickHandler =(e) => {
 		var input = document.querySelector(".header__mobile__menu input");
-		console.log(e)
-		console.log("dsadsd",input)
+		
 		e.stopPropagation();
 		if(e.target == input){
-			console.log("Dasfassdafdsf")
+			
 		}else{
 			var burger = document.querySelector(".js-header-burger");
 			var mobile = document.querySelector(".js-header-mobile");

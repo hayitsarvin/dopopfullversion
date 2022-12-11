@@ -44,6 +44,8 @@ const useLoco = (mobile) => {
     
         });
         locoScroll.on('scroll', (args) => {
+          ScrollTrigger.update();
+
             var header = document.querySelector(".header__1");
             if(location.pathname.includes("/creators/")){
 			
@@ -125,9 +127,9 @@ const useLoco = (mobile) => {
           // console.log("updating")
           }, 100);
        
-          locoScroll.on("scroll" , (args) => {
-              ScrollTrigger.update();
-          });
+          // locoScroll.on("scroll" , (args) => {
+          //     ScrollTrigger.update();
+          // });
         return () => {
           if (locoScroll) {
             ScrollTrigger.removeEventListener("refresh", lsUpdate);
@@ -138,7 +140,7 @@ const useLoco = (mobile) => {
             clearTimeout(timer);
           }
         };
-      },[]);
+      },[mobile]);
     
   
 }

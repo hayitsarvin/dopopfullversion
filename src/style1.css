@@ -129,9 +129,9 @@ body.is__dark{
     padding: 20px;
     background: white;
     box-shadow: 0px 3px 16px rgb(47 83 109 / 12%);
-    border-radius: 25px;
+    border-radius: 19px;
     margin-bottom: 20px;
-    overflow: hidden;
+    /* overflow: hidden; */
     transition: all 0.1s linear;
 }
 .sc-card-product:hover{
@@ -2348,6 +2348,7 @@ div.item_details div.right-side-div .nft-info-left .nft-dis{
 }
 .is__dark footer.footer__1{
     background-color: #1A1A1A !important;
+    border-radius: 60px 60px 0px 0px;
 }
 .is__dark .footer__social  li{
     background-color: #262626;
@@ -2701,6 +2702,16 @@ a.btn-primary{
 @media only screen and (max-width: 992px) {
     .hero-creators-div{
         padding-left: 0 !important;
+    }
+    .threejs-back{
+        display: none;
+    }
+    .contact .threejs-back ,.register .threejs-back {
+        display: block;
+    }
+    .connect-wallet-btn-div{
+        border: 5px solid white;
+        border-radius: 100px;
     }
     .hero__2 .card__item .card_head img:hover{
         transform: scale(1);
@@ -5291,6 +5302,67 @@ div.hero-btn-div:hover .my-btns-text{
     background-color: black;
     z-index: 1;
     position: absolute;
+   
+    opacity: 0;
+    top: 0;
+
+}
+.threejs-back .threejs-blue-back{
+    height: 100%;
+    width: 100%;
+    background-color: #0010c8;
+    mix-blend-mode: overlay;
+    z-index: 1;
+    position: absolute;
     opacity: 0;
     top: 0;
 }
+
+.slider-item.todays-pick-card svg{
+    
+    overflow: visible !important;
+}
+.slider-item.todays-pick-card svg ,svg rect{
+    position:absolute;
+    top:0;
+    left:0;
+    padding: 0;
+    margin: 0;
+    width:100%;
+    height:100%;
+    fill:transparent !important;
+
+  }
+  svg rect{
+    stroke:red;
+    stroke-width:3;
+    stroke-dasharray:1550;
+    stroke-dashoffset: 1550;
+  
+  }
+  svg rect.red{
+    stroke:#732dff;
+  
+  }
+  svg rect.green{
+    stroke:#00ffd9;
+  
+  }
+  svg rect.blue{
+    stroke:#ffffff;
+   /* mix-blend-mode:lighten; */
+
+  
+  }
+  svg rect.yellow{
+    stroke:#ffaa00;
+   /* mix-blend-mode: overlay; */
+
+  
+  }
+  svg rect.back-color{
+    stroke:#262626;
+    stroke-width:5;
+
+  
+  }

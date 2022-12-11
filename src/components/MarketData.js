@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import CurtainBtn from '../helpers/CurtainBtn'
 import gsap from 'gsap'
 const MarketData = () => {
+	var mobileCheck = window.matchMedia("(max-width: 992px)");
 	// useEffect(() => {
 
 	// 	const hoverBg =  document.querySelector("#btn-test-three-test")
@@ -55,7 +56,13 @@ const MarketData = () => {
 						<div    className="my-btns-div">
 
 			                <Link id="btn-test-three-test"  className="btn btn-grad " to="/connectwallet">
-							<CurtainBtn mode="creator-hero-btn-color"/>
+								{
+									window.innerWidth > 992 ?
+									<CurtainBtn mode="creator-hero-btn-color"/>
+
+									:null
+
+								}
 
 							</Link>
 							<p className="my-btns-text">Connect wallet</p>
