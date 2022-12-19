@@ -156,15 +156,15 @@ function NftCart(props) {
          
 <div className="sc-card-product back-blur back-glass-effect bg-color-dark bg-cart-dark-color not-blur-bg" id={"a"+props.nft._id}>
 <svg className='card-border-svg'>
-      <rect rx="20" ry="20" className="color green">
+      <rect rx="30" ry="30" className="color green">
         
       </rect>
-      <rect rx="20" ry="20" className="color blue">
+      <rect rx="30" ry="30" className="color blue">
       </rect>
-      <rect rx="20" ry="20" className="color red">
+      <rect rx="30" ry="30" className="color red">
       </rect>
       
-      <rect rx="20" ry="20" className="color yellow">
+      <rect rx="30" ry="30" className="color yellow">
       </rect>
 {/*       
       <rect rx="25" ry="25" class="back-color">
