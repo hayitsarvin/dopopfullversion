@@ -12,11 +12,13 @@ import Footer from '../components/Footer'
 import gsap from 'gsap'
 import ScrollTrigger from 'gsap/ScrollTrigger'
 import CSSRulePlugin from 'gsap/CSSRulePlugin'
+import { useAppContext } from "../contexts/appcontext.js";
 // import LocomotiveScroll from "locomotive-scroll";
 import "../locomotive-scroll.css";
 import ThreeJsSecene from '../helpers/ThreeJsSecene'
 import HeroThree from '../components/HeroThree'
 const Home = () => {
+  const { isMobile , setReset} = useAppContext();
     gsap.registerPlugin(ScrollTrigger);
     gsap.registerPlugin(CSSRulePlugin);
     const el = useRef();
@@ -38,7 +40,9 @@ const Home = () => {
 		);
 		
 	},[x])
-     useLoco(x.matches)
+  // useLoco(!isMobile)
+
+  
 
 
     // useEffect(() => {
@@ -54,6 +58,8 @@ const Home = () => {
     // })
     const popu = document.querySelector("#todaysPick")
     useLayoutEffect(() => {
+      if(!isMobile){
+
       setTimeout(() => {
         
          popularSection.current  = gsap.timeline({
@@ -62,8 +68,7 @@ const Home = () => {
             scrub: true,
             // markers:true,
             start:'top center+=100',
-            end: 'center center',
-            scroller: !x.matches ? "#viewport" : null,
+            end: 'center center'
           }
          })
          .fromTo(q(".threejs-blue-back"),
@@ -75,16 +80,7 @@ const Home = () => {
           opacity:.7,
           // immediateRender: false,
         })
-        .fromTo(CSSRulePlugin.getRule(".threejs-back:after"),
-        { 
-          backgroundColor:"#8000FF",
-          opacity:.7,
-          },
-          {
-           // backgroundColor:"rgb(250,0,150)",
-           opacity:.7,
-           // immediateRender: false,
-         });
+       
         marketsection.current = gsap.to(q(".threejs-back .threejs-dark-back"), {
 
           scrollTrigger: {
@@ -95,7 +91,7 @@ const Home = () => {
             // markers:true,
             // onEnter:() => gsap.to(CSSRulePlugin.getRule(".threejs-back:after") , {backgroundColor:"#e95900"}),
             // onLeaveBack:() => gsap.to(CSSRulePlugin.getRule(".threejs-back .threejs-dark-back") , {opacity:1}),
-            scroller: !x.matches ? "#viewport" : null,
+         
           }
         });
 
@@ -109,7 +105,7 @@ const Home = () => {
                   scrub: true,
                   start:'top center+=10%',
                   end: 'top top',
-                  scroller: !x.matches ? "#viewport" : null,
+           
                 }
           });
           const changeBack = (dir)=>{
@@ -120,7 +116,7 @@ const Home = () => {
             // })
             gsap.to(CSSRulePlugin.getRule(".threejs-back:after"),
             {
-              opacity:()=>dir=== 1?.7 :0,
+             
               backgroundColor:()=> dir ===1? "#ff4600": "#8000FF",
               duration:0.01,
             })
@@ -140,7 +136,7 @@ const Home = () => {
               onLeaveBack:({direction})=>  changeBack(direction),
               onEnter:({direction})=>  changeBack(direction),
              
-              scroller: !x.matches ? "#viewport" : null,
+        
             },
             ease:"none",
           })
@@ -204,7 +200,9 @@ const Home = () => {
       }
     }
   }
-  },[popu, x.matches])
+}
+
+  },[popu, isMobile])
    
     // useEffect(() => {
         
@@ -297,12 +295,66 @@ const Home = () => {
     //   }
     // }
     // },[popu])
-    return (
+    // if(isMobile){
+    //   return (
+    //     // <div >
+
+        
+         
+    //         <div  className='home-div'  ref={el} >
+          
+        
+
+       
+
+    //         <div id="stick"   className="home-page-loading" data-scroll  data-scroll-section >
+    //         <ThreeJsSecene />
+
+    //         <div >
+
+        
+    //     <BidSuccessPopup />
+		// <PlaceBidPopup />
+
+    //     {/* <Hero /> */}
+    //     <HeroThree />
+    //     <PopularCreators show={true}/>
+    //     <div className='back-animation-today-div'>
+    //     <TodaysPick />
+    //     <TopGallery />
+    //     </div>
+
+        
+    //     {/* <GlobalCommunity /> */}
+    //     <MarketData/>
+    //     <Footer />
+
+    //     </div>
+    //     </div>
+    //     </div>
+       
+    // )
+    // }else{
+      return (
         // <div >
-        <div id="viewport" className='home-div' data-scroll-container ref={el} >
+
+       
+         
+     
+          <div id="viewport" className='home-div' data-scroll-container ref={el} >
+
+          
+        
+
+       
 
             <div id="stick"   className="home-page-loading" data-scroll  data-scroll-section >
-            <ThreeJsSecene />
+            {
+        isMobile ? null 
+        :
+        <ThreeJsSecene />
+        
+       }
 
             <div >
 
@@ -326,7 +378,11 @@ const Home = () => {
         </div>
         </div>
         </div>
+       
+       
     )
+    // }
+    
 }
 
 export default Home

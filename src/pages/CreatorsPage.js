@@ -100,7 +100,7 @@ const CreatorsPage = () => {
 	useEffect(() => {
 		dispatch(singleUser(id))
 	},[id,dispatch])
-	useLoco(screen.matches)
+	// useLoco(screen.matches)
 	const shareDivRef = useRef(null);
 	const reportDivRef = useRef(null);
 	useOutsideAlerter(shareDivRef);

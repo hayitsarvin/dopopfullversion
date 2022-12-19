@@ -26,7 +26,7 @@ const ConnectWallet = () => {
 		);
 		
 	},[x])
-	useLoco(x.matches)
+	// useLoco(x.matches)
     return (
 		<div id="viewport">
 		{walletOpen ? (

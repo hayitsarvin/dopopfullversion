@@ -7,18 +7,24 @@ import HeroPopularCreators from '../components/HeroPopularCreators'
 import PopularCreators from '../components/PopularCreators'
 import Footer from '../components/Footer'
 import useLoco from '../hooks/useLoco'
+import { useAppContext } from "../contexts/appcontext.js";
 import ThreeJsSecene from '../helpers/ThreeJsSecene'
+import { useState } from 'react'
 const Creators = () => {
-    var x = window.matchMedia("(max-width: 992px)")
-	useEffect(() => {
-		window.addEventListener('resize', () => {
+    const { isMobile, resetLoco,setReset} = useAppContext();
 
-			x = window.matchMedia("(max-width: 992px)")
-		}
-		);
+    // var x = window.matchMedia("(max-width: 992px)")
+	// useEffect(() => {
+	// 	window.addEventListener('resize', () => {
+    
+	// 		x = window.matchMedia("(max-width: 992px)")
+	// 	}
+	// 	);
 		
-	},[x])
-	useLoco(x.matches)
+	// },[isMobile])
+   
+	// useLoco( isMobile)
+   
 
     return (
         <>

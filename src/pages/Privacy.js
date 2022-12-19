@@ -12,7 +12,7 @@ const Privacy = () => {
 		);
 		
 	},[x])
-	useLoco(x.matches)
+	// useLoco(x.matches)
   return (
     <div id="viewport">
 	<div className="container">

@@ -45,12 +45,30 @@ import useWindowSize from './hooks/useWindowSize';
 import { LocomotiveScrollProvider } from 'react-locomotive-scroll'
 import useLoco from './hooks/useLoco';
 import Mouse from './helpers/Mouse';
+import { useAppContext } from "./contexts/appcontext.js";
 // import LocomotiveScroll from "locomotive-scroll";
 // import "./locomotive-scroll.css";
 
 function App() {
-  var x = window.matchMedia("(max-width: 992px)")
-	const [deviceChange , setDeviceChange] = useState(x.matches)
+  const { isMobile, setMobileTrue, setMobileFalse } = useAppContext();
+  function checkForMobileBg() {
+    const width = window.innerWidth;
+
+    if (width > 992 ) {
+      setMobileFalse();
+    } else if (width < 992 ) setMobileTrue();
+  }
+  useEffect(() => {
+    checkForMobileBg();
+
+    window.addEventListener("resize", checkForMobileBg);
+
+    return () => window.removeEventListener("resize", checkForMobileBg);
+  }, [isMobile]);
+  
+  useLoco()
+  // var x = window.matchMedia("(max-width: 992px)")
+	// const [deviceChange , setDeviceChange] = useState(x.matches)
   const appRef = useRef();
 const q = gsap.utils.selector(appRef);
   const dispatch = useDispatch()
@@ -65,20 +83,20 @@ const q = gsap.utils.selector(appRef);
   const  loadingEnd = () => {
     gsap.set(q(".hero__2"), { clearProps: "transform"});
   }
-  useEffect(() => {
-		window.addEventListener('resize', () => {
-			x = window.matchMedia("(max-width: 992px)")
-			if(deviceChange === x.matches){
+  // useEffect(() => {
+	// 	window.addEventListener('resize', () => {
+	// 		x = window.matchMedia("(max-width: 992px)")
+	// 		if(deviceChange === x.matches){
 			
-			}else{
-				setDeviceChange(prev => x.matches)
+	// 		}else{
+	// 			setDeviceChange(prev => x.matches)
 	
-			}
+	// 		}
 		
-		}
-		);
+	// 	}
+	// 	);
 		
-	},[x])
+	// },[x])
   useEffect(() => { 
 		dispatch(listUser())
 
@@ -129,7 +147,7 @@ imagesLoaded( posts, function() {
       <PlaceBidPopup />
       <BuyPopup />
       <Header />
-      { deviceChange ? null : <Mouse />}
+      { isMobile ? null : <Mouse />}
       
       <ScrollToTop >
          

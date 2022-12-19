@@ -197,7 +197,7 @@ const ArtDetail = () => {
 												</div>
 				<div className="image-info-mobile">
 				<div className="art-image-div-mobile">
-					<img src={nft.image} />
+					<img src={nft.image_s} />
 				</div>
 				<div className="art-info-div-mobile space-y-50 container">
 					<div className="name-like-div container">
@@ -425,7 +425,7 @@ const ArtDetail = () => {
 				<div className="item_details">
 					<div className="row sm:space-y-20">
 						<div className="col-lg-5 my-col-lg-5" >
-							<img className="item_img" src={nft.image} alt="" />
+							<img className="item_img" src={nft.image_s} alt="" />
 						</div>
 						<div className=" col-lg-7 my-col-lg-7 right-side-div">
 						<div className=" nft-info-left">

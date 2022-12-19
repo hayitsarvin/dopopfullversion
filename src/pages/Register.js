@@ -99,7 +99,7 @@ const Register = () => {
 
 	// 	})
 	// })
-	useLoco(x.matches)
+	// useLoco(x.matches)
     return (
 		<div id="viewport" data-scroll-container>
         <div id="stick-register" data-scroll-section >

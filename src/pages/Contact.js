@@ -25,7 +25,7 @@ const Contact = () => {
 		);
 		
 	},[x])
-	useLoco(x.matches)
+	// useLoco(x.matches)
   return (
 
 	  <div id="viewport"   >

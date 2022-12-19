@@ -10,6 +10,7 @@ import CurtainBtn from '../helpers/CurtainBtn'
 const Hero = ({MouseMove}) => {
 	const el = useRef();
 	var x = window.matchMedia("(max-width: 992px)")
+	var heroMedia = window.matchMedia("(min-width:993px) and (max-width: 1350px)")
 	const [deviceChange , setDeviceChange] = useState(x.matches)
 	const dispatch = useDispatch()
 	const nftList = useSelector(state => state.nftList)
@@ -38,6 +39,7 @@ console.log(MouseMove)
 	}
 	useEffect(() => {
 		window.addEventListener('resize', () => {
+			heroMedia = window.matchMedia("(min-width:993px) and (max-width: 1350px)")
 			x = window.matchMedia("(max-width: 992px)")
 			if(deviceChange === x.matches){
 			
@@ -380,6 +382,8 @@ console.log(MouseMove)
 													</div>
 												)
 											}
+										
+											
 
 										}
 										

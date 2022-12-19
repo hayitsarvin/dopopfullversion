@@ -69,7 +69,7 @@ function PopularCreators(props) {
 				start: "top bottom",
         		end: "bottom+=50 top",
 				scrub:true,
-				scroller: !x.matches ? "#viewport" : null
+		
 			}
 		});
 		const ani2 = gsap.to(q(".creators_anim2"), {
@@ -82,7 +82,7 @@ function PopularCreators(props) {
 				start: "top bottom",
        			 end: "bottom+=50 top",
 				scrub: true,
-				scroller: !x.matches ? "#viewport" : null
+				
 			}
 			
 		});

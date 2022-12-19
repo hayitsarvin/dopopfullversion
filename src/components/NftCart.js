@@ -21,6 +21,8 @@ function NftCart(props) {
 	const {loading:loadingUsers , users} = userList
     const cartHoverAnimation = useRef()
 	const q = gsap.utils.selector(cartHoverAnimation)
+    var screen = window.matchMedia("(max-width: 992px)")
+	const [deviceChange , setDeviceChange] = useState(screen)
     useEffect(()=> {
         const cardDiv = cartHoverAnimation.current
      
@@ -30,28 +32,17 @@ function NftCart(props) {
            
            const anim1 = gsap.fromTo(q("svg rect.color"),{
                 strokeDashoffset:1550,
-                strokeDasharray: 1550,
-              duration:1.5,
-                stagger:0.15,
-                ease:"power3.out"
+ 
+              
             },
             {
-                strokeDashoffset:-450,
-                strokeDasharray: 550,
-              duration:1.5,
+                strokeDashoffset:-1550,
+ 
+              duration:1.3,
                 stagger:0.15,
                 ease:"power3.out"
             })
-            gsap.to(q("svg rect.color"),
-            {
-                strokeDashoffset:-1550,
-                strokeDasharray: 1550,
-                duration:2,
-                delay:1,
-                  stagger:0.15,
-                ease:"power3.out"
-            })
-            
+           
             // const anim2 = gsap.to(q("svg rect.color"),{
             //     strokeDashoffset:-1550,
             //   duration:1.5,
@@ -62,18 +53,20 @@ function NftCart(props) {
             
         })
         cardDiv.addEventListener("mouseleave", () => {
-            
-            gsap.to(q("svg rect.color"),
-            {
-                strokeDashoffset:-1550,
-                strokeDasharray: 1550,
+            // const carttest = document.querySelectorAll("svg rect.color")
+            // gsap.to(carttest,
+            // {
+            //     strokeDashoffset:-1550,
+            //     duration:1.5,
+                
                
-            })
+            // })
                
         })
     
         
-    },[])
+    },[screen])
+ 
     // useEffect(() => {
         // const mouseCircle = document.querySelector(".mouse-circle")
         // const mouseText = document.querySelector(".mouse-text")

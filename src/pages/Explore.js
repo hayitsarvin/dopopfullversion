@@ -81,7 +81,7 @@ const Explore = () => {
 	// 		})
 	// 	  }
 	// 	}, []);
-	useLoco(screen.matches)
+	// useLoco(screen.matches)
 
 	function useQuery() {
 		const { search } = useLocation();
