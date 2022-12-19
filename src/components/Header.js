@@ -204,11 +204,11 @@ window.addEventListener('resize', () => {
 
 
 							<Link to="/connectwallet" id="header-connect-wallet-btn">
-<CurtainBtn mode="contact-btn-color"/>
-<div className="header-btn-text">
+								<CurtainBtn mode="light"/>
+								<div className="header-btn-text">
 
-								Connect Wallet
-							</div>
+									Connect Wallet
+								</div>
 
 							</Link>
 

@@ -4,7 +4,7 @@ import gsap from 'gsap'
 
 import './curtain.scss'
 
-export default function CurtainBtn({ mode = '',btnHero }) {
+export default function CurtainBtn({ mode = '', moveEffect = true }) {
   
   const hoverBg = useRef(null)
 
@@ -40,6 +40,7 @@ export default function CurtainBtn({ mode = '',btnHero }) {
       scaleY: 0.97,
       ease: 'elastic.out(1, 0.4)',
       duration: 1.5,
+      overwrite: true
       // background: "white"
     })
 
@@ -51,7 +52,8 @@ export default function CurtainBtn({ mode = '',btnHero }) {
       opacity: 1,
       ease: 'expo.out',
       duration: 1,
-      stagger: 0.2
+      stagger: 0.2,
+      overwrite: true
     })
     
   }
@@ -63,7 +65,8 @@ export default function CurtainBtn({ mode = '',btnHero }) {
       scaleX: 1,
       scaleY: 1,
       ease: 'elastic.out(1, 0.4)',
-      duration: 1.5
+      duration: 1.5,
+      overwrite: true
     })
 
     // Curtains passing in bg
@@ -74,12 +77,15 @@ export default function CurtainBtn({ mode = '',btnHero }) {
       opacity: 1,
       ease: 'expo.out',
       duration: 1,
-      stagger: 0.2
+      stagger: 0.2,
+      overwrite: true
     })
 
   }
+
   const btnmove = (e) => {
 	
+    if ( !moveEffect ) return
 		const {target}= e;
 		const ofTop = target.getBoundingClientRect().top;
 		const ofLeft = target.getBoundingClientRect().left;
@@ -101,6 +107,8 @@ export default function CurtainBtn({ mode = '',btnHero }) {
 		
 	}
 	const mouseLeave = (e) => {
+    if ( !moveEffect ) return
+
 		const btnDiv = document.querySelector(".hero-btn-div")
 		gsap.to(hoverBg.current.parentNode.parentNode, {
 			x: 0,

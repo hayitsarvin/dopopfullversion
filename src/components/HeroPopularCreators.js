@@ -4,6 +4,8 @@ import { useSelector, useDispatch } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { listUser } from '../actions/userActions'
 import CurtainBtn from '../helpers/CurtainBtn'
+import { gsap } from 'gsap'
+
 const HeroPopularCreators = () => {
 	useEffect(() => {
 		var mobileCheck = window.matchMedia("(max-width: 992px)")

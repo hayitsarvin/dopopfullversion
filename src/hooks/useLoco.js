@@ -8,6 +8,8 @@ import { useAppContext } from "../contexts/appcontext.js";
 gsap.registerPlugin(ScrollTrigger);
 
 const useLoco = (props) => {
+
+  const location = useLocation()
   
   useEffect(()=> {
     const lenis = new Lenis({
@@ -22,8 +24,11 @@ const useLoco = (props) => {
       infinite: false,
     })
     
+    const header = document.querySelector(".header__1");
+
     //get scroll value
     lenis.on('scroll', ({ scroll, limit, velocity, direction, progress }) => {
+
     
         if(location.pathname.includes("/creators/")){
 			

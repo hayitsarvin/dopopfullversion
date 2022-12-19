@@ -1,5 +1,6 @@
 import React,{useEffect,useState} from 'react'
 import { Link } from 'react-router-dom'
+import CurtainBtn from '../helpers/CurtainBtn'
 
 const Footer = () => {
 	var screen = window.matchMedia("(max-width: 992px)")
@@ -34,7 +35,9 @@ const Footer = () => {
 							</div>
 <div className="send-email-div">
 								<input type="text" id="footer-send-email-input" style={{border:"none"}} placeholder="Your e-mail" />
-									<a href="#" >send</a>
+									<a href="#" >
+										Send
+									</a>
 								
 								</div>
 								</>
@@ -49,7 +52,10 @@ const Footer = () => {
 							</div>
 							<div className="send-email-div">
 								<input type="text" id="footer-send-email-input" style={{border:"none"}} placeholder="Your e-mail" />
-									<a href="#" >Send</a>
+									<a href="#" >
+										<CurtainBtn mode="light" moveEffect={false} />
+										Send
+									</a>
 								
 								</div>
 							

@@ -129,7 +129,7 @@ body.is__dark{
     padding: 20px;
     background: white;
     box-shadow: 0px 3px 16px rgb(47 83 109 / 12%);
-    border-radius: 19px;
+    border-radius: 30px;
     margin-bottom: 20px;
     /* overflow: hidden; */
     transition: all 0.1s linear;
@@ -2899,7 +2899,7 @@ a.btn-primary{
         margin-top: 5% !important;
         
     }
-    .art-detail-page-mobile .{
+    .art-detail-page-mobile {
         padding-left: 0 !important;
         padding-right: 0 !important;
     }
@@ -5212,7 +5212,7 @@ transition: none !important;
     to {transform: translate3d(0px, 0px, 0px) skew(0deg, 00deg) scale(1, 1);}
   }
   #header-connect-wallet-btn{
-    background-color: white;
+    background: transparent;
     padding: 10px 15px;
     font-size: 13px;
     font-weight: 500;
