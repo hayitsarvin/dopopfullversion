@@ -75,7 +75,7 @@ const DiscoverCreatorCart = (props) => {
 										<div className="avatars flex-column space-y-10">
 											<Link to={`/creators/${user._id}`}>
 											<div className="cover">
-												<img src={user.banner} alt="Avatar" className="img-fluid " />
+												<img src={user.banner_s} alt="Avatar" className="img-fluid " />
 											</div>
 											</Link>
 											<div className="media has_border">

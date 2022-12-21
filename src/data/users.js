@@ -11,6 +11,7 @@ const users =[{
   total_sold_nft: 10,
   total_sold_price: 145,
   banner: "/img/bg/cover_1.jpg",
+  banner_s: "/img/bg/cover_1_s.jpg",
   avatar: "/img/avatars/1.jpg",
   nfts_for_sale: 2,
   views: 152
@@ -27,6 +28,8 @@ const users =[{
   total_sold_nft: 15,
   total_sold_price: 200,
   banner: "/img/bg/cover_5.jpg",
+  banner_s: "/img/bg/cover_5_s.jpg",
+
   avatar: "/img/avatars/2.jpg",
   nfts_for_sale: 4,
   views: 20157
@@ -43,6 +46,8 @@ const users =[{
   total_sold_nft: 1,
   total_sold_price: 10,
   banner: "/img/bg/c-1.jpg",
+  banner_s: "/img/bg/c-1_s.jpg",
+
   avatar: "/img/avatars/3.jpg",
   nfts_for_sale: 2,
   views: 10
@@ -59,6 +64,8 @@ const users =[{
   total_sold_nft: 5,
   total_sold_price: 20,
   banner: "/img/bg/c-2.jpg",
+  banner_s: "/img/bg/c-2_s.jpg",
+
   avatar: "/img/avatars/4.jpg",
   nfts_for_sale: 3,
   views: 515
@@ -75,6 +82,8 @@ const users =[{
   total_sold_nft: 1,
   total_sold_price: 3,
   banner: "/img/bg/c-3.jpg",
+  banner_s: "/img/bg/c-3_s.jpg",
+
   avatar: "/img/avatars/5.jpg",
   nfts_for_sale: 2,
   views: 557
@@ -91,6 +100,8 @@ const users =[{
   total_sold_nft: 5,
   total_sold_price: 20,
   banner: "/img/bg/c-4.jpg",
+  banner_s: "/img/bg/c-4_s.jpg",
+
   avatar: "/img/avatars/6.jpg",
   nfts_for_sale: 2,
   views: 27
@@ -107,6 +118,8 @@ const users =[{
   total_sold_nft: 22,
   total_sold_price: 35,
   banner: "/img/bg/c-5.jpg",
+  banner_s: "/img/bg/c-5_s.jpg",
+
   avatar: "/img/avatars/7.jpg",
   nfts_for_sale: 2,
   views: 657
@@ -123,6 +136,8 @@ const users =[{
   total_sold_nft: 1,
   total_sold_price: 245,
   banner: "/img/bg/c-6.jpg",
+  banner_s: "/img/bg/c-6_s.jpg",
+
   avatar: "/img/avatars/8.jpg",
   nfts_for_sale:2,
   views: 84
@@ -139,6 +154,8 @@ const users =[{
   total_sold_nft: 81,
   total_sold_price: 545,
   banner: "/img/bg/c-7.jpg",
+  banner_s: "/img/bg/c-7_s.jpg",
+
   avatar: "/img/avatars/9.jpg",
   nfts_for_sale: 3,
   views: 1354
@@ -155,6 +172,8 @@ const users =[{
   total_sold_nft: 15,
   total_sold_price: 11,
   banner: "/img/bg/c-8.jpg",
+  banner_s: "/img/bg/c-8_s.jpg",
+
   avatar: "/img/avatars/10.jpg",
   nfts_for_sale: 6,
   views: 745
@@ -171,6 +190,8 @@ const users =[{
   total_sold_nft: 8,
   total_sold_price: 7,
   banner: "/img/bg/c-9.jpg",
+  banner_s: "/img/bg/c-9_s.jpg",
+
   avatar: "/img/avatars/11.jpg",
   nfts_for_sale: 2,
   views: 21
@@ -187,6 +208,8 @@ const users =[{
   total_sold_nft: 3,
   total_sold_price: 1,
   banner: "/img/bg/c-10.jpg",
+  banner_s: "/img/bg/c-10_s.jpg",
+
   avatar: "/img/avatars/12.jpg",
   nfts_for_sale: 3,
   views: 154
@@ -203,6 +226,8 @@ const users =[{
   total_sold_nft: 2,
   total_sold_price: 5,
   banner: "/img/bg/c-11.jpg",
+  banner_s: "/img/bg/c-11_s.jpg",
+
   avatar: "/img/avatars/13.jpg",
   nfts_for_sale: 3,
   views: 310
@@ -219,6 +244,8 @@ const users =[{
   total_sold_nft: 32,
   total_sold_price: 120,
   banner: "/img/bg/c-12.jpg",
+  banner_s: "/img/bg/c-12_s.jpg",
+
   avatar: "/img/avatars/14.jpg",
   nfts_for_sale: 2,
   views: 57
@@ -235,6 +262,8 @@ const users =[{
   total_sold_nft: 3,
   total_sold_price: 12,
   banner: "/img/bg/c-13.jpg",
+  banner_s: "/img/bg/c-13_s.jpg",
+
   avatar: "/img/avatars/15.jpg",
   nfts_for_sale: 3,
   views: 53
@@ -251,6 +280,8 @@ const users =[{
   total_sold_nft: 2,
   total_sold_price: 5,
   banner: "/img/bg/c-14.jpg",
+  banner_s: "/img/bg/c-14_s.jpg",
+
   avatar: "/img/avatars/16.jpg",
   nfts_for_sale: 1,
   views: 434
@@ -267,6 +298,8 @@ const users =[{
   total_sold_nft: 12,
   total_sold_price: 13,
   banner: "/img/bg/c-15.jpg",
+  banner_s: "/img/bg/c-15_s.jpg",
+
   avatar: "/img/avatars/17.jpg",
   nfts_for_sale: 1,
   views: 105
@@ -283,6 +316,8 @@ const users =[{
   total_sold_nft: 5,
   total_sold_price: 13,
   banner: "/img/bg/c-16.jpg",
+  banner_s: "/img/bg/c-16_s.jpg",
+
   avatar: "/img/avatars/13.jpg",
   nfts_for_sale: 2,
   views: 73
@@ -299,6 +334,8 @@ const users =[{
   total_sold_nft: 1,
   total_sold_price: 2,
   banner: "/img/bg/c-17.jpg",
+  banner_s: "/img/bg/c-17_s.jpg",
+
   avatar: "/img/avatars/14.jpg",
   nfts_for_sale: 1,
   views: 56
@@ -315,6 +352,8 @@ const users =[{
   total_sold_nft: 5,
   total_sold_price: 5,
   banner: "/img/bg/c-18.jpg",
+  banner_s: "/img/bg/c-18_s.jpg",
+
   avatar: "/img/avatars/12.jpg",
   nfts_for_sale: 1,
   views: 165
@@ -331,6 +370,8 @@ const users =[{
   total_sold_nft: 52,
   total_sold_price: 34,
   banner: "/img/bg/c-19.jpg",
+  banner_s: "/img/bg/c-19_s.jpg",
+
   avatar: "/img/avatars/16.jpg",
   nfts_for_sale: 2,
   views: 668
@@ -347,6 +388,8 @@ const users =[{
   total_sold_nft: 11,
   total_sold_price: 15,
   banner: "/img/bg/c-20.jpg",
+  banner_s: "/img/bg/c-20_s.jpg",
+
   avatar: "/img/avatars/17.jpg",
   nfts_for_sale: 1,
   views: 1355
@@ -363,6 +406,8 @@ const users =[{
   total_sold_nft: 15,
   total_sold_price: 13,
   banner: "/img/bg/c-21.jpg",
+  banner_s: "/img/bg/c-21_s.jpg",
+
   avatar: "/img/avatars/19.jpg",
   nfts_for_sale: 1,
   views: 43
@@ -379,6 +424,8 @@ const users =[{
   total_sold_nft: 1,
   total_sold_price: 4,
   banner: "/img/bg/c-1.jpg",
+  banner_s: "/img/bg/c-1_s.jpg",
+
   avatar: "/img/avatars/19.jpg",
   nfts_for_sale: 2,
   views: 120
@@ -395,6 +442,8 @@ const users =[{
   total_sold_nft: 5,
   total_sold_price: 8.2,
   banner: "/img/bg/c-2.jpg",
+  banner_s: "/img/bg/c-2_s.jpg",
+
   avatar: "/img/avatars/20.jpg",
   nfts_for_sale: 1,
   views: 1874
@@ -411,6 +460,8 @@ const users =[{
   total_sold_nft: 2,
   total_sold_price: 6.4,
   banner: "/img/bg/c-3.jpg",
+  banner_s: "/img/bg/c-3_s.jpg",
+
   avatar: "/img/avatars/21.jpg",
   nfts_for_sale: 1,
   views: 153
@@ -427,6 +478,8 @@ const users =[{
   total_sold_nft: 1,
   total_sold_price: 1.5,
   banner: "/img/bg/c-4.jpg",
+  banner_s: "/img/bg/c-4_s.jpg",
+
   avatar: "/img/avatars/22.jpg",
   nfts_for_sale: 3,
   views: 152
@@ -443,6 +496,8 @@ const users =[{
   total_sold_nft: 7,
   total_sold_price: 8.83,
   banner: "/img/bg/c-5.jpg",
+  banner_s: "/img/bg/c-5_s.jpg",
+
   avatar: "/img/avatars/23.jpg",
   nfts_for_sale: 1,
   views: 1354
@@ -459,6 +514,8 @@ const users =[{
   total_sold_nft: 8,
   total_sold_price: 12.7,
   banner: "/img/bg/c-6.jpg",
+  banner_s: "/img/bg/c-6_s.jpg",
+
   avatar: "/img/avatars/24.jpg",
   nfts_for_sale: 1,
   views: 32
@@ -475,6 +532,8 @@ const users =[{
   total_sold_nft: 80,
   total_sold_price: 72.9,
   banner: "/img/bg/c-7.jpg",
+  banner_s: "/img/bg/c-7_s.jpg",
+
   avatar: "/img/avatars/25.jpg",
   nfts_for_sale: 2,
   views: 64
