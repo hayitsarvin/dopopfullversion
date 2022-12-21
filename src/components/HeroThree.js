@@ -321,15 +321,14 @@ console.log(MouseMove)
 
 									</span> */}
 									
-							<Link  id="btn-test-three"  className="btn btn-grad  btn-md btn-hover"
-								to="/explore">
-					<CurtainBtn mode="creator-hero-btn-color" btnHero="false"/>
+								<Link  id="btn-test-three"  className="btn btn-grad  btn-md btn-hover"
+									to="/explore" >
+
+									<CurtainBtn mode="noBg" />
+
+									NFT Marketplace
 
 								</Link>
-								{/* <div className='border-blend-mode'></div> */}
-								{/* <div className="blend-test"> */}
-								<p className="my-btns-text">NFT Marketplace</p>
-								{/* </div> */}
 								</div>
 						</div>
 						

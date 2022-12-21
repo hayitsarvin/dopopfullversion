@@ -100,7 +100,7 @@ const Contact = () => {
 											<PrivacyCheck />
 											<div className="send-btn-div mt-0">
 											<a href="#" onClick={(e) =>{ e.preventDefault();setContactPopupOpen(true)}} className="btn box-shadow-none btn-grad w-full btn-mobile mt-5 boxshadow-none" placeholder="Create an account">
-												<CurtainBtn mode="contact-btn-color"/>
+												<CurtainBtn mode="light"/>
 												Send
 												</a>
 											</div>

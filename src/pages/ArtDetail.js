@@ -16,6 +16,7 @@ import Loading from '../components/Loading'
 import { Link } from 'react-router-dom'
 import Footer from '../components/Footer'
 import useLoco from '../hooks/useLoco'
+import CurtainBtn from '../helpers/CurtainBtn'
 var closeOrderTap ;
 function useOutsideAlerter(ref) {
 	// console.log(ref)
@@ -654,9 +655,24 @@ const ArtDetail = () => {
 								</div> */}
 								<div className="d-flex space-x-20 info-btns-div">
 								
-											<a href="" className="btn btn-primary btn-lg btn-width-full info-buy-btn" onClick={(e) => {dispatch(BuyPopupAction(true)); e.preventDefault(); dispatch(BuyNftAction(nft._id)) }} data-toggle="modal" data-target="#popup_buy"> Buy for {nft.price} ETH</a>
+											<a href="" className="btn btn-primary btn-lg btn-width-full info-buy-btn" 
+												onClick={(e) => {
+													dispatch(BuyPopupAction(true));
+													e.preventDefault();
+													dispatch(BuyNftAction(nft._id)) 
+												}} 
+												data-toggle="modal" data-target="#popup_buy"> 
+												<CurtainBtn mode="blue" moveEffect={false} />
+												Buy for {nft.price} ETH
+											</a>
 	
-											<a href="" className="btn btn-grad btn-lg btn-width-full info-place-bid-btn " onClick={(e) => {dispatch(PlaceBidPopupAction(true)); e.preventDefault(); dispatch(PlaceBidNftAction(nft._id)) }} > Place a bid</a>
+											<a href="" 
+												className="btn btn-grad btn-lg btn-width-full info-place-bid-btn" 
+												onClick={(e) => {dispatch(PlaceBidPopupAction(true)); e.preventDefault(); 
+												dispatch(PlaceBidNftAction(nft._id)) }} > 
+												<CurtainBtn mode="sec-blue" moveEffect={false} />
+												Place a bid
+											</a>
 									
 								</div>
 										</>

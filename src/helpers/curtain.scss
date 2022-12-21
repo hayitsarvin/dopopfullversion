@@ -4,9 +4,15 @@
     width: 101%;
     height: 101%;
     border-radius: inherit;
-    background-color: red;
     z-index: -2;
     pointer-events: none;
+
+    .border-bg {
+      position: absolute;
+      inset: -0.3rem;
+      border: 0.3rem solid #fff;
+      border-radius: 3rem;
+    }
   
     &.light {
       background-color: #fff;
@@ -19,6 +25,33 @@
           background-color: rgba($color: #000, $alpha: 0.05);
         }
       }
+    }
+
+    &.noBg {
+      background-color: transparent;
+      mix-blend-mode: exclusion !important;
+      z-index: 10;
+
+      @supports (mix-blend-mode: exclusion) {
+        mix-blend-mode: exclusion;
+      }
+
+      .curtain-wrapper .curtain {
+        &.curtain-1 {
+          background-color: rgba($color: #fff, $alpha: 1);
+        }
+        &.curtain-2 {
+          background-color: rgba($color: #fff, $alpha: 0.9);
+        }
+      }
+    }
+
+    &.blue {
+      background-color: #3399FF;
+    }
+
+    &.sec-blue {
+      background-color: #283D51;
     }
   }
   
@@ -58,8 +91,8 @@
     color: black !important;
   }
   .creator-hero-btn-color{
-    background: transparent !important;
-    border: 5px solid rgba(255, 255, 255, 1) !important;
+    // background: transparent !important;
+    // border: 5px solid rgba(255, 255, 255, 1) !important;
     // padding: 40px 100px !important;
   }
   .btn-area {

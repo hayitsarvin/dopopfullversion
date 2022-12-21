@@ -491,13 +491,13 @@ const orderExploreRef = useRef();
 								nftExploreList.map(nft  => {
 									if(nft.is_auction){
 										return(
-											<div className="col-xl-3 col-lg-4 col-md-6 col-sm-6 pl-0">
+											<div key={nft._id} className="col-xl-3 col-lg-4 col-md-6 col-sm-6 pl-0">
 			        						<TopGalleryCart nft={nft} />
 			        					</div>
 										)
 									}else{
 										return(
-											<div className="col-xl-3 col-lg-4 col-md-6 col-sm-6 pl-0">
+											<div key={nft._id} className="col-xl-3 col-lg-4 col-md-6 col-sm-6 pl-0">
 												<NftCart nft={nft} />
 											</div>
 										)

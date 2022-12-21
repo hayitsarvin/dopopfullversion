@@ -155,7 +155,7 @@ const DiscoverAllCreators = () => {
 									loading ? "loading" :(usersList.map(u => {
 										
 										return(
-											<div className="col-lg-3 col-lg-4 col-md-6 col-sm-6">
+											<div key={u._id} className="col-lg-3 col-lg-4 col-md-6 col-sm-6">
 												<DiscoverCreatorCart user={u} />
 											</div>
 										)

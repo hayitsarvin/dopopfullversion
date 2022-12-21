@@ -109,7 +109,7 @@ const Login = () => {
 										{/* <a className="btn btn-white btn-sm color_green"> Click to verify </a> */}
 										<div>
 										<a href="#" onClick={(e) => LoginHandler(e)} className="btn box-shadow-none btn-grad w-full btn-mobile mt-3 boxshadow-none" placeholder="Create an account">
-											<CurtainBtn mode="login-btn-color"/>
+											<CurtainBtn mode="light"/>
 											Login
 											</a>
 											</div>

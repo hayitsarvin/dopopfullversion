@@ -94,7 +94,7 @@ body{
     font-size: 16px !important;
 }
 .register .btn.btn-grad:hover{
-    color: #1A8CFF !important;
+    color: #000 !important;
 }
 .register.login-back .btn.btn.btn-grad:hover{
     color: #1A8CFF !important;
@@ -134,9 +134,9 @@ body.is__dark{
     /* overflow: hidden; */
     transition: all 0.1s linear;
 }
-.sc-card-product:hover{
+/* .sc-card-product:hover{
     transform: translateY(-10px);
-}
+} */
 .card-media img{
     transition: all 0.3s ease-in-out;
 }
@@ -1681,7 +1681,7 @@ body.is__dark.body-login{
     color: white;
 }
 .hero-creators-div .creator_card.is_big ,.hero-creators-div .creator_card.is_big .avatars{
-    transition: all 0.1s ease-in-out;
+    /* transition: all 0.1s ease-in-out; */
     
 }
 .hero-creators-div .creator_card.is_big:hover{
@@ -1691,10 +1691,9 @@ body.is__dark.body-login{
 
 
 }
-.hero-creators-div .creator_card.is_big:hover .avatars{
+/* .hero-creators-div .creator_card.is_big:hover .avatars{
     transform: scale(0.95);
-    
-}
+} */
 .hero-creators-div .creator_card.is_big .avatars img{
     transform: translateZ(0) !important;
     will-change: transform !important; 
@@ -1715,7 +1714,7 @@ body.is__dark.body-login{
     text-decoration: underline;
 }
 .register input ,.contact input{
-    padding: 16px 15px !important;
+    padding: 1rem 1.5rem !important;
     font-weight: 500 !important;
 }
 /* div.register div.confirm input:focus::placeholder ,.contact input:focus::placeholder{
@@ -2206,6 +2205,7 @@ border-radius: 100px;
     color: white;
     padding: 15px 25px;
     font-weight: 500;
+    transition: none !important;
 }
 .is__dark .item_details_page  .item_details .share .icon ,.is__dark .item_details_page  .item_details .more .icon{
     background: #333333 !important;
@@ -2295,10 +2295,10 @@ div.item_details div.right-side-div .nft-info-left .nft-dis{
 }
 .explore-mode-div{
     background-color: #262626;
-    padding: 20px;
-    padding-left: 35px;
-    padding-right: 85px;
-    border-radius: 20px;
+    padding: 0;
+    width: 13rem;
+    height: min-content;
+    border-radius: 1.5rem;
     position: absolute;
     /* top:6%; */
     z-index: 1;
@@ -2332,12 +2332,20 @@ div.item_details div.right-side-div .nft-info-left .nft-dis{
     opacity: 1;
 }
 
+.explore-mode-div ul {
+    width: 100%;
+    display: grid;
+}
 .explore-mode-div ul li{
-    margin-bottom: 10%;
+    padding: 0.8rem 0 0.8rem 1.5rem;
     color: #87898C !important;
     cursor: pointer;
-    font-size: 25px;
+    font-size: 1.5rem;
     font-weight: 500;
+    transition: background-color 0.3s ease-out;
+}
+.explore-mode-div ul li:hover {
+    color: #3399FF !important;
 }
 .section__creators .order-type-dropdown .dropdown-item{
     font-weight: 500 !important;
@@ -2618,7 +2626,9 @@ a.btn-primary{
         margin-top: 61px !important;
     }
     .hero-creators-div  .my-btns-div .btn-hover{
-        padding: 40px 100px !important;
+        padding: 1.55rem 2.4rem !important;
+        font-size: 1.2rem;
+        font-weight: 500;
     }
     .is__dark .header__1 div.header__search , .is__light .header__1 div.header__search{
         background-color: rgba(0, 0, 0, 0.35) !important;
@@ -2659,7 +2669,7 @@ a.btn-primary{
         padding-right: 20px !important;
     }
     .my-btns-div .btn-hover, .my-btns-div .btn.btn-hover-tablet{
-        padding: 45px 119px !important;
+        padding: 1.9rem 2.1rem !important;
         transform-origin: center;
     }
     .my-btns-div .my-btns-text{
@@ -3311,6 +3321,9 @@ div.btns-and-avatar-div h5{
     }
  .hero-creators-div .btn-dark{
         width: 100% !important;
+        font-size: 1.1rem;
+        font-weight: 500;
+        padding: 1.2rem !important;
     }
     .hero-creators-div .creators-hero-padding .col-6{
         padding-right: 0 !important;
@@ -3472,7 +3485,10 @@ div.btns-and-avatar-div h5{
     }
     .connect-wallet-btn-div .btn-grad , .item_details .btn-grad , .hero__creators .btn-grad  , .contact .btn-grad{
         width: 100%;
-        padding: 20px 23px;
+    }
+    .connect-wallet-btn-div .my-btns-div #btn-test-three-test {
+        padding: 2rem 0.1rem !important;
+        font-size: 1.1rem !important;
     }
     
     .btn-mobile{
@@ -3567,7 +3583,7 @@ div.btns-and-avatar-div h5{
         letter-spacing: 1px;
     }
     .connect-wallet-btn-div{
-        width: 55% !important;
+        width: 60% !important;
     }
     #footer-send-email-input{
         padding: 20px;
@@ -4955,11 +4971,17 @@ body .card__item a , body .card__item .details ,body .sc-card-product ,body .sc-
 .likes:hover .like-border {
     display: none;
 }
-#btn-test-three{
+#btn-test-three {
+    font-size: 1.18rem;
     transition: none !important;
+    font-weight: 500;
+    position: relative;
 }
+
 .connect-wallet-btn-div .my-btns-div .btn-grad{
-    padding: 40px 119px !important;
+    font-weight: 500;
+    font-size: 1.2rem;
+    padding: 1.55rem 2.5rem !important;
 }
 .threejs-grad{
     width: 100%;
@@ -5012,6 +5034,10 @@ body .card__item a , body .card__item .details ,body .sc-card-product ,body .sc-
     background-color: white;
     mix-blend-mode: soft-light !important;
 }
+
+.creator-card-border-div {
+    transition: none;
+}
 .creator-card-border{
     /* background-color: rgb(62, 57, 57); */
     border-radius: 35px;
@@ -5024,11 +5050,17 @@ body .card__item a , body .card__item .details ,body .sc-card-product ,body .sc-
     left: -5px;
     right: -5px;
     bottom: -5px;
-    transition: all 0.1s ease-in-out;
+    pointer-events: none;
 }
-.creator-card-border-div:hover .creator-card-border{
+.creator-card-border-div a {
+    transition: none !important;
+}
+/* .creator-card-border-div:hover .creator-card-border{
     transform: scale(1.05);
 }
+.creator-card-border-div:hover a{
+    transform: scale(1.05);
+} */
 .creator_item, .creator-card-border-div , .hero-nfts-border-div{
     position: relative !important ;
 }
@@ -5150,6 +5182,7 @@ div.login .login-input-border input {
 }
 div.register .register-input-border input {
     border:none !important;
+
 }
 div.login .login-input-border::before , div.register .register-input-border::before{
     content: "";
@@ -5159,7 +5192,7 @@ div.login .login-input-border::before , div.register .register-input-border::bef
     right: 0;
     bottom: 0;
     border-radius: 50px;
-    border: 5px solid white;
+    border: 0.25rem solid white;
     /* margin: -5px; */
     z-index: -1;
     mix-blend-mode:soft-light;
@@ -5267,16 +5300,16 @@ transition: none !important;
   .hero-btn-div{
     position: relative;
   }
-  .connect-wallet-btn-div:hover p.my-btns-text{
+  /* .connect-wallet-btn-div:hover p.my-btns-text{
     mix-blend-mode: difference !important;
-  }
-  div.hero-btn-div .curtain.curtain-1 , .connect-wallet-btn-div .curtain.curtain-1{
+  } */
+  /* div.hero-btn-div .curtain.curtain-1 , .connect-wallet-btn-div .curtain.curtain-1{
     background-color: rgba(255, 255, 255, 0.8) !important;
   }
   div.hero-btn-div .curtain.curtain-2 , .connect-wallet-btn-div .curtain.curtain-2{
     background-color: rgba(255, 255, 255, 1) !important;
 
-}
+} */
 div.hero-btn-div:hover .my-btns-text{
     mix-blend-mode: difference;
 }
@@ -5325,6 +5358,17 @@ div.hero-btn-div:hover .my-btns-text{
     
     overflow: visible !important;
 }
+svg.card-border-svg {
+    fill: none;
+}
+
+svg.card-border-svg path {
+    fill: none;
+    stroke-width:2px;
+}
+svg.card-border-svg path.red {
+    stroke: red;
+}
 .slider-item.todays-pick-card svg {
     position:absolute;
     top:0;
@@ -5352,8 +5396,10 @@ div.hero-btn-div:hover .my-btns-text{
   svg rect{
     stroke:red;
     stroke-width:2px;
-    stroke-dasharray:1550;
-    stroke-dashoffset: 1550;
+    stroke-dasharray:1550px;
+    stroke-dashoffset: 1550px;
+    stroke-linejoin: bevel;
+    stroke-linecap: round;
   
   }
   svg rect.red{
@@ -5389,4 +5435,11 @@ div.hero-btn-div:hover .my-btns-text{
   body {
     width: 100% !important;
     min-height: 100% !important;
+  }
+
+  a, button {
+    backface-visibility: hidden;
+    transform: translateZ(0);
+    -webkit-font-smoothing: subpixel-antialiased;
+    will-change: transform;
   }

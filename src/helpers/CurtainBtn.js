@@ -33,7 +33,7 @@ export default function CurtainBtn({ mode = '', moveEffect = true }) {
   
   
   const onMouseHover = () => {
-    const btnBack = document.querySelector(".creator-hero-btn-color")
+    // const btnBack = document.querySelector(".creator-hero-btn-color")
     
     gsap.to( hoverBg.current, {
       scaleX: 1.05,
@@ -125,21 +125,17 @@ export default function CurtainBtn({ mode = '', moveEffect = true }) {
   return (
     <>
     
-   {window.innerWidth > 768 ?  
+   {window.innerWidth > 768 && moveEffect ?  
    <span onMouseMove={btnmove} onMouseLeave={mouseLeave}  className="btn-area" >
    </span>
-  :
-  <span  className="btn-area" >
-    </span>
+  : ''
   }
     
 
    
 
-    <div 
-      className={`dvb-hover-bg ${ mode ? mode : '' }`}
-      ref={hoverBg}
-    >
+    <div className={`dvb-hover-bg ${ mode ? mode : '' }`} ref={hoverBg} >
+      { mode === 'noBg' ? <div className='border-bg'></div> : '' }
      
       <div className="curtain-wrapper">
         <div className="curtain curtain-1" ref={curtain1} ></div>

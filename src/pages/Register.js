@@ -161,8 +161,11 @@ const Register = () => {
 											x.matches ? null :<p className="mt-0 terms-check">By clicking Create account, I agree that I have read and accepted the <span>Terms of Use</span> and <span>Privacy Policy</span>.</p>
 										}
 										<div>
-									<a href="#" className="btn box-shadow-none btn-grad btn-mobile my-mt-40 btn-full-width boxshadow-none"  onClick={(e) => RegisterHandler(e)}>
-									<CurtainBtn mode="login-btn-color"/>
+									<a href="#" className="btn box-shadow-none btn-grad btn-mobile my-mt-40 btn-full-width boxshadow-none"  
+										onClick={(e) => RegisterHandler(e)} 
+										style={{ color: '#000' }}>
+										
+										<CurtainBtn mode="light"/>
 
 										Create account
 										</a>

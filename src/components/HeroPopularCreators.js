@@ -1,4 +1,4 @@
-import React,{useEffect, useState} from 'react'
+import React,{useEffect, useLayoutEffect, useState} from 'react'
 import HeroPopularCreatorCart from './HeroPopularCreatorCart'
 import { useSelector, useDispatch } from 'react-redux'
 import { Link } from 'react-router-dom'
@@ -7,7 +7,7 @@ import CurtainBtn from '../helpers/CurtainBtn'
 import { gsap } from 'gsap'
 
 const HeroPopularCreators = () => {
-	useEffect(() => {
+	useLayoutEffect(() => {
 		var mobileCheck = window.matchMedia("(max-width: 992px)")
 
 		if(!mobileCheck.matches){
@@ -24,24 +24,25 @@ const HeroPopularCreators = () => {
 			
 				// Curtains passing in bg
 				
-			  }
+			}
 	
-			  const onMouseOut = () => {
-	
-				// Jelly Effect for BG
-				gsap.to( hoverBg, {
-				  scaleX: 1,
-				  scaleY: 1,
-				  ease: 'elastic.out(1, 0.4)',
-				  duration: 1.3
-				})
-			
-				// Curtains passing in bg
-			
-			
-			  }
-			  hoverBg.addEventListener('mouseover', onMouseHover)
+			const onMouseOut = () => {
+
+			// Jelly Effect for BG
+			gsap.to( hoverBg, {
+				scaleX: 1,
+				scaleY: 1,
+				ease: 'elastic.out(1, 0.4)',
+				duration: 1.3
+			})
+		
+			// Curtains passing in bg
+		
+		
+			}
+			hoverBg.addEventListener('mouseover', onMouseHover)
 			hoverBg.addEventListener('mouseout', onMouseOut)
+
 		}
 		
 	},[])
@@ -111,6 +112,7 @@ const [deviceChange , setDeviceChange] = useState(x.matches)
 			  slider.scrollLeft = scrollLeft - walk;
 			  
 			});
+
 		}
 		
 	} , [x])
@@ -129,13 +131,13 @@ const [deviceChange , setDeviceChange] = useState(x.matches)
 							if(deviceChange){
 								return (
 									
-									<div className=" col-6 col-md-4 col-sm-4">
+									<div key={user._id} className=" col-6 col-md-4 col-sm-4">
 										<HeroPopularCreatorCart user={user}/>
 									</div>
 								)
 							}else{
 								return (
-									<div className="col-lg-3 col-md-4 col-3">
+									<div key={user._id} className="col-lg-3 col-md-4 col-3">
 										<HeroPopularCreatorCart user={user}/>
 									</div>
 								)
@@ -150,8 +152,9 @@ const [deviceChange , setDeviceChange] = useState(x.matches)
 					deviceChange ? <div className="mt-50 m-top-52  btn-div" style={{textAlign:"center"}}>
 						<div className="my-btns-div">
 
-					<Link className="btn btn-grad btn-dark btn-threejs btn-hover-tablet" to="/register" ></Link>
-					<p className="my-btns-text">Be a creator</p>
+					<Link className="btn btn-grad btn-dark btn-threejs btn-hover-tablet" to="/register" >
+						Be a creator
+					</Link>
 					</div>
 				</div>
 				 :
@@ -160,9 +163,10 @@ const [deviceChange , setDeviceChange] = useState(x.matches)
 								<div className="my-btns-div">
 
 									<Link id="btn-three-creators-test" className="btn btn-grad btn-threejs btn-dark btn-hover" to="/register" >
-										<CurtainBtn mode="creator-hero-btn-color"/>
+										<CurtainBtn mode="noBg"/>
+										Be a creator
 									</Link>
-									<p className="my-btns-text">Be a creator</p>
+									{/* <p className="my-btns-text">Be a creator</p> */}
 									</div>
 								</div>
 					)

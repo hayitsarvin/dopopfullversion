@@ -231,7 +231,7 @@ const ThreeJsSecene = ({row}) => {
 				var normTime = (elaspedSeconds % maxTime) / maxTime;
 				uniforms.time.value = elaspedSeconds * 1.0;
 			
-				renderer.render(scene, camera);
+				if ( renderer && renderer.render ) renderer.render(scene, camera)
 			}
 			
 			function animate() {

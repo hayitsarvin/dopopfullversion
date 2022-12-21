@@ -12,6 +12,8 @@ import FetchCreator from '../helpers/FetchCreator'
 import axios from 'axios'
 import TimeCounter from './TimeCounter'
 import CurtainBtn from '../helpers/CurtainBtn'
+// import Vivus from "vivus";
+
 function NftCart(props) {
     const {nft} = props
 	const dispatch = useDispatch()
@@ -30,7 +32,7 @@ function NftCart(props) {
        
         cardDiv.addEventListener("mouseenter", () => {
            
-           const anim1 = gsap.fromTo(q("svg rect.color"),{
+            const anim1 = gsap.fromTo(q("svg rect.color"),{
                 strokeDashoffset:1550,
  
               
@@ -42,6 +44,24 @@ function NftCart(props) {
                 stagger:0.15,
                 ease:"power3.out"
             })
+            // .to({
+            //     strokeDashoffset: '3000px',
+            //     strokeDasharray: '3000px',
+            //     duration: 0.5,
+            //     stagger: 0.1,
+            //     ease:"power3.inOut"
+            // },0)
+            // .to({
+            //     strokeDashoffset: '0',
+            //     duration: 0.5,
+            //     stagger: 0.1,
+            //     ease:"power3.inOut"
+            // })
+            // new Vivus('card-border-svg', {
+            //     duration: 200,
+            //     type: 'sync',
+            //     animTimingFunction: Vivus.EASE
+            // }, (self) => {})
            
             // const anim2 = gsap.to(q("svg rect.color"),{
             //     strokeDashoffset:-1550,
@@ -52,7 +72,7 @@ function NftCart(props) {
             // })
             
         })
-        cardDiv.addEventListener("mouseleave", () => {
+        // cardDiv.addEventListener("mouseleave", () => {
             // const carttest = document.querySelectorAll("svg rect.color")
             // gsap.to(carttest,
             // {
@@ -62,7 +82,7 @@ function NftCart(props) {
                
             // })
                
-        })
+        // })
     
         
     },[screen])
@@ -155,21 +175,20 @@ function NftCart(props) {
         <div className="slider-item todays-pick-card  my-cart-padding" ref={cartHoverAnimation}>
          
 <div className="sc-card-product back-blur back-glass-effect bg-color-dark bg-cart-dark-color not-blur-bg" id={"a"+props.nft._id}>
-<svg className='card-border-svg'>
+    <svg className='card-border-svg' id="card-border-svg">
       <rect rx="30" ry="30" className="color green">
-        
       </rect>
       <rect rx="30" ry="30" className="color blue">
       </rect>
       <rect rx="30" ry="30" className="color red">
       </rect>
-      
       <rect rx="30" ry="30" className="color yellow">
       </rect>
-{/*       
-      <rect rx="25" ry="25" class="back-color">
-      </rect> */}
-      </svg>
+    </svg>
+          {/* <path d="m 0 0 l 100 0 l 0 100 l -100 0 z" className="color green" />
+          <path d="m 0 0 l 100 0 l 0 100 l -100 0 z" className="color blue" />
+          <path d="m 0 0 l 100 0 l 0 100 l -100 0 z" className="color red" />
+          <path d="m 0 0 l 100 0 l 0 100 l -100 0 z" className="color yellow" /> */}
 <div className="card-media active">
 <Link to={`/artdetail/${props.nft._id}`}>
 <img className="card-nft-image card-nft-hover-img" src={props.nft.image} alt="Image" />

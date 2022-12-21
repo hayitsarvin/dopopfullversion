@@ -5,7 +5,7 @@ const PrivacyCheck = () => {
   const [clicked , setClicked] = useState(false)
   return (
     <div className="privacy-check-div" onClick={()=> setClicked(prev => !prev)}>
-        <span class="checkmark"  style={{backgroundColor: "transparent"}}><span className="inner-ckeck" style={clicked ? {backgroundColor: "white"} : {backgroundColor: "transparent"}}></span></span>
+        <span className="checkmark"  style={{backgroundColor: "transparent"}}><span className="inner-ckeck" style={clicked ? {backgroundColor: "white"} : {backgroundColor: "transparent"}}></span></span>
 
         <p >I have read and accept the <Link to="/privacy">Privacy Policy</Link></p>
 {/* <div class="toggle-button-cover">
