@@ -12,9 +12,12 @@ import FetchCreator from '../helpers/FetchCreator'
 import axios from 'axios'
 import TimeCounter from './TimeCounter'
 import CurtainBtn from '../helpers/CurtainBtn'
+import { useAppContext } from '../contexts/appcontext'
 // import Vivus from "vivus";
 
 function NftCart(props) {
+	const { isMobile } = useAppContext();
+
     const {nft} = props
 	const dispatch = useDispatch()
     const [highestBidIndex , setHighestBidIndex] = useState(0)
@@ -23,8 +26,8 @@ function NftCart(props) {
 	const {loading:loadingUsers , users} = userList
     const cartHoverAnimation = useRef()
 	const q = gsap.utils.selector(cartHoverAnimation)
-    var screen = window.matchMedia("(max-width: 992px)")
-	const [deviceChange , setDeviceChange] = useState(screen)
+    // var screen = window.matchMedia("(max-width: 992px)")
+	// const [deviceChange , setDeviceChange] = useState(screen)
     useEffect(()=> {
         const cardDiv = cartHoverAnimation.current
      
@@ -85,7 +88,7 @@ function NftCart(props) {
         // })
     
         
-    },[screen])
+    },[isMobile])
  
     // useEffect(() => {
         // const mouseCircle = document.querySelector(".mouse-circle")

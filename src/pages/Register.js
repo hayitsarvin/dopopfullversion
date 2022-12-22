@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import Footer from '../components/Footer'
 import PrivacyCheck from '../components/PrivacyCheck'
 import RegisterMessagePopup from '../components/RegisterMessagePopup'
+import { useAppContext } from '../contexts/appcontext'
 import CurtainBtn from '../helpers/CurtainBtn'
 import ThreeJsSecene from '../helpers/ThreeJsSecene'
 import useLoco from '../hooks/useLoco'
@@ -17,16 +18,8 @@ const Register = () => {
     const [emailError, setEmailError] = useState("")
     const [passwordError, setPasswordError] = useState("")
     const [registerPopupOpen, setRegisterPopupOpen] = useState(false)
-	var x = window.matchMedia("(max-width: 990px)")
+	const { isMobile } = useAppContext();
 
-	useEffect(() => {
-		window.addEventListener('resize', () => {
-
-			x = window.matchMedia("(max-width: 990px)")
-		}
-		);
-		
-	},[x])
 	useEffect(() => {
         if (!selectedFile) {
             setPreview(undefined)
@@ -158,7 +151,7 @@ const Register = () => {
 										Service. To continue, you’ll need to accept the terms of services
 										by checking the boxes.</p> */}
 										{
-											x.matches ? null :<p className="mt-0 terms-check">By clicking Create account, I agree that I have read and accepted the <span>Terms of Use</span> and <span>Privacy Policy</span>.</p>
+											isMobile ? null :<p className="mt-0 terms-check">By clicking Create account, I agree that I have read and accepted the <span>Terms of Use</span> and <span>Privacy Policy</span>.</p>
 										}
 										<div>
 									<a href="#" className="btn box-shadow-none btn-grad btn-mobile my-mt-40 btn-full-width boxshadow-none"  

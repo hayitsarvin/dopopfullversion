@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import Footer from '../components/Footer'
 import WalletErrorPopup from '../components/WalletErrorPopup'
+import { useAppContext } from '../contexts/appcontext'
 import useLoco from '../hooks/useLoco'
 
 const ConnectWallet = () => {
+	const { isMobile } = useAppContext();
+
 	const [walletOpen,setWalletOpen] = useState(false)
 	useEffect(() => {
 		const wallet = document.querySelectorAll(".wallets .col-lg-4")
@@ -17,15 +20,15 @@ const ConnectWallet = () => {
 			});
 		})
 	}, [])
-	var x = window.matchMedia("(max-width: 992px)")
-    useEffect(() => {
-		window.addEventListener('resize', () => {
-			x = window.matchMedia("(max-width: 992px)")
+	// var x = window.matchMedia("(max-width: 992px)")
+    // useEffect(() => {
+	// 	window.addEventListener('resize', () => {
+	// 		x = window.matchMedia("(max-width: 992px)")
 		
-		}
-		);
+	// 	}
+	// 	);
 		
-	},[x])
+	// },[x])
 	// useLoco(x.matches)
     return (
 		<div id="viewport">

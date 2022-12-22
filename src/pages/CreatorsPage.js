@@ -11,6 +11,7 @@ import { Link } from 'react-router-dom'
 import TopGalleryCart from '../components/TopGalleryCart'
 import Footer from '../components/Footer'
 import useLoco from '../hooks/useLoco'
+import { useAppContext } from '../contexts/appcontext'
 
 var closeOrderTap ;
 function useOutsideAlerter(ref) {
@@ -51,9 +52,11 @@ const CreatorsPage = () => {
 
 		// setReportModal(false)
 	}
+	const { isMobile } = useAppContext();
+
 	const {id}= useParams()
-	var screen = window.matchMedia("(max-width: 992px)")
-	const [deviceChange , setDeviceChange] = useState(screen.matches)
+	// var screen = window.matchMedia("(max-width: 992px)")
+	// const [deviceChange , setDeviceChange] = useState(isMobile)
 
 	const dispatch = useDispatch()
 	const [sortOpen , setSortOpen] = useState(true)
@@ -64,20 +67,20 @@ const CreatorsPage = () => {
 	const {loading , nfts} = nftList
 	const signleUser = useSelector(state => state.userSingle)
 	const {loading:loadingUser , user} = signleUser
-	useEffect(() => {
-		window.addEventListener('resize', () => {
+	// useEffect(() => {
+	// 	window.addEventListener('resize', () => {
 
-			screen = window.matchMedia("(max-width: 992px)")
-			if(deviceChange === screen.matches){
+	// 		screen = window.matchMedia("(max-width: 992px)")
+	// 		if(deviceChange === isMobile){
 			
-			}else{
-				setDeviceChange(prev => screen.matches)
+	// 		}else{
+	// 			setDeviceChange(prev => isMobile)
 				
-			}
-		}
-		);
+	// 		}
+	// 	}
+	// 	);
 		
-	},[screen])
+	// },[screen])
 	const copyHandler = (e) => {
 		e.preventDefault()
 		var copyText = document.getElementById("creator-id-copy");
@@ -100,7 +103,7 @@ const CreatorsPage = () => {
 	useEffect(() => {
 		dispatch(singleUser(id))
 	},[id,dispatch])
-	// useLoco(screen.matches)
+	// useLoco(isMobile)
 	const shareDivRef = useRef(null);
 	const reportDivRef = useRef(null);
 	useOutsideAlerter(shareDivRef);
@@ -116,7 +119,7 @@ const CreatorsPage = () => {
 			(
 				<>
 				{
-					screen.matches ? 
+					isMobile ? 
 					null :
 					<CreatorsPageHero creator={user}/>
 
@@ -125,12 +128,12 @@ const CreatorsPage = () => {
 				<div className="row justify-content-center flex-backward-mobile">
 					<div className="col-xl-3 col-lg-4  about-me-div">
 						{
-							screen.matches ? <div className="hero-image-div-mobile">
+							isMobile ? <div className="hero-image-div-mobile">
 							<img src={user.banner} />
 						</div> : null
 						}
 						
-						<div className={screen.matches ? "" : "container"}>
+						<div className={isMobile ? "" : "container"}>
 					<div className="share" ref={shareDivRef}>
 													<div className="icon"  onClick={() => setShareModal(prev => !prev)}>
 														<i className="ri-share-line"></i>

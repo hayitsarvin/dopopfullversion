@@ -1,17 +1,20 @@
 import React,{useEffect} from 'react'
 import Footer from '../components/Footer'
+import { useAppContext } from '../contexts/appcontext';
 import useLoco from '../hooks/useLoco'
 
 const Privacy = () => {
-	var x = window.matchMedia("(max-width: 992px)")
-    useEffect(() => {
-		window.addEventListener('resize', () => {
-			x = window.matchMedia("(max-width: 992px)")
+	const { isMobile } = useAppContext();
+
+	// var x = window.matchMedia("(max-width: 992px)")
+    // useEffect(() => {
+	// 	window.addEventListener('resize', () => {
+	// 		x = window.matchMedia("(max-width: 992px)")
 		
-		}
-		);
+	// 	}
+	// 	);
 		
-	},[x])
+	// },[x])
 	// useLoco(x.matches)
   return (
     <div id="viewport">

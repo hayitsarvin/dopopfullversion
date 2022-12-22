@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import Footer from '../components/Footer'
 import LoginMessagePopup from '../components/LoginMessagePopup'
+import { useAppContext } from '../contexts/appcontext'
 import CurtainBtn from '../helpers/CurtainBtn'
 import ThreeJsSecene from '../helpers/ThreeJsSecene'
 import useLoco from '../hooks/useLoco'
@@ -13,6 +14,7 @@ const Login = () => {
 	const [password , setPassword] = useState("")
 	const [error , setError] = useState("")
 	const [errorPassword , setErrorPassword] = useState("")
+	const { isMobile } = useAppContext();
 
 	const LoginHandler = (e) => {
 		e.preventDefault()
@@ -61,15 +63,15 @@ const Login = () => {
 
 	// 	})
 	// })
-	var x = window.matchMedia("(max-width: 992px)")
-    useEffect(() => {
-		window.addEventListener('resize', () => {
-			x = window.matchMedia("(max-width: 992px)")
+	// var x = window.matchMedia("(max-width: 992px)")
+    // useEffect(() => {
+	// 	window.addEventListener('resize', () => {
+	// 		x = window.matchMedia("(max-width: 992px)")
 		
-		}
-		);
+	// 	}
+	// 	);
 		
-	},[x])
+	// },[x])
 	// useLoco(x.matches)
     return (
 		<div id="viewport" data-scroll-container>

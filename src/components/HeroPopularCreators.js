@@ -5,12 +5,15 @@ import { Link } from 'react-router-dom'
 import { listUser } from '../actions/userActions'
 import CurtainBtn from '../helpers/CurtainBtn'
 import { gsap } from 'gsap'
+import { useAppContext } from '../contexts/appcontext'
 
 const HeroPopularCreators = () => {
-	useLayoutEffect(() => {
-		var mobileCheck = window.matchMedia("(max-width: 992px)")
+	const { isMobile } = useAppContext();
 
-		if(!mobileCheck.matches){
+	useLayoutEffect(() => {
+		// var mobileCheck = window.matchMedia("(max-width: 992px)")
+
+		if(!isMobile){
 			const hoverBg =  document.querySelector("#btn-three-creators-test")
 			
 			const onMouseHover = () => {
@@ -45,7 +48,7 @@ const HeroPopularCreators = () => {
 
 		}
 		
-	},[])
+	},[isMobile])
 
 	const dispatch = useDispatch()
 	const userList = useSelector(state => state.userList)
@@ -66,25 +69,25 @@ const HeroPopularCreators = () => {
 		})
 
 }, [users.length])
-var x = window.matchMedia("(max-width: 992px)")
-const [deviceChange , setDeviceChange] = useState(x.matches)
+// var x = window.matchMedia("(max-width: 992px)")
+// const [deviceChange , setDeviceChange] = useState(x.matches)
 
-	useEffect(() => {
-		window.addEventListener('resize', () => {
+// 	useEffect(() => {
+// 		window.addEventListener('resize', () => {
 
-			x = window.matchMedia("(max-width: 992px)")
-			if(deviceChange === x.matches){
+// 			x = window.matchMedia("(max-width: 992px)")
+// 			if(deviceChange === x.matches){
 			
-			}else{
-				setDeviceChange(prev => x.matches)
+// 			}else{
+// 				setDeviceChange(prev => x.matches)
 				
-			}
-		}
-		);
+// 			}
+// 		}
+// 		);
 		
-	},[x])
+// 	},[x])
 	useEffect(() => {
-		if(x.matches){
+		if(isMobile){
 			const slider = document.querySelector('.creators-hero-padding');
 			let isDown = false;
 			let startX;
@@ -115,7 +118,7 @@ const [deviceChange , setDeviceChange] = useState(x.matches)
 
 		}
 		
-	} , [x])
+	} , [isMobile])
     return (
         <div className="container hero-creators-div">
 			{/* <div className="back-img-div-left" >
@@ -128,7 +131,7 @@ const [deviceChange , setDeviceChange] = useState(x.matches)
 					{/* <div className="col-lg-1"></div> */}
 					{
 						topUsers.map(user => {
-							if(deviceChange){
+							if(isMobile){
 								return (
 									
 									<div key={user._id} className=" col-6 col-md-4 col-sm-4">
@@ -149,7 +152,7 @@ const [deviceChange , setDeviceChange] = useState(x.matches)
 
 				</div>
 				{
-					deviceChange ? <div className="mt-50 m-top-52  btn-div" style={{textAlign:"center"}}>
+					isMobile ? <div className="mt-50 m-top-52  btn-div" style={{textAlign:"center"}}>
 						<div className="my-btns-div">
 
 					<Link className="btn btn-grad btn-dark btn-threejs btn-hover-tablet" to="/register" >

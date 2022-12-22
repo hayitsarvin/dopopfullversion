@@ -17,6 +17,7 @@ import { Link } from 'react-router-dom'
 import Footer from '../components/Footer'
 import useLoco from '../hooks/useLoco'
 import CurtainBtn from '../helpers/CurtainBtn'
+import { useAppContext } from '../contexts/appcontext'
 var closeOrderTap ;
 function useOutsideAlerter(ref) {
 	// console.log(ref)
@@ -57,9 +58,11 @@ const ArtDetail = () => {
 
 		// setReportModal(false)
 	}
+	const { isMobile } = useAppContext();
+
 	const {id}= useParams()
-	var screen = window.matchMedia("(max-width: 992px)")
-	const [deviceChange , setDeviceChange] = useState(screen.matches)
+	// var screen = window.matchMedia("(max-width: 992px)")
+	// const [deviceChange , setDeviceChange] = useState(screen.matches)
 
 	const dispatch = useDispatch()
 	const nftSingle = useSelector(state => state.singleNft)
@@ -74,20 +77,20 @@ const ArtDetail = () => {
     const [reportPopupShow , setReportPopupShow] = useState(false)
     const [shareModal , setShareModal] = useState(false)
     const [highestBider , setHighestBider] = useState()
-	useEffect(() => {
-		window.addEventListener('resize', () => {
+	// useEffect(() => {
+	// 	window.addEventListener('resize', () => {
 
-			screen = window.matchMedia("(max-width: 992px)")
-			if(deviceChange === screen.matches){
+	// 		screen = window.matchMedia("(max-width: 992px)")
+	// 		if(deviceChange === screen.matches){
 			
-			}else{
-				setDeviceChange(prev => screen.matches)
+	// 		}else{
+	// 			setDeviceChange(prev => screen.matches)
 				
-			}
-		}
-		);
+	// 		}
+	// 	}
+	// 	);
 		
-	},[screen])
+	// },[screen])
 
 	useEffect(() => {
 		dispatch(singleNft(id))
@@ -143,7 +146,7 @@ const ArtDetail = () => {
 		)
 	}else {
 
-	if(deviceChange){
+	if(isMobile){
 		return (
 			<div id="viewport" data-scroll-container>
 			<div className="art-detail-page-mobile" >
@@ -452,7 +455,7 @@ const ArtDetail = () => {
 								<div className="d-flex justify-content-between">
 									<div className="space-x-10 d-flex align-items-center">
 									{
-									screen.matches ? (
+									isMobile ? (
 										<>
 											
 										</>
@@ -504,7 +507,7 @@ const ArtDetail = () => {
 									</div>
 								</div>
 								{
-									screen.matches ? (
+									isMobile ? (
 										<>
 									
 										</>
@@ -517,7 +520,7 @@ const ArtDetail = () => {
 		}
 								
 								{
-									screen.matches ? 
+									isMobile ? 
 									(
 										<>
 										{/* <div className="creators">
@@ -562,7 +565,7 @@ const ArtDetail = () => {
 									) : null
 								}
 								{
-									screen.matches ? (
+									isMobile ? (
 										<div className="numbers">
 									<div className="row">
 										<div className="col-lg-6 width-half">
@@ -593,7 +596,7 @@ const ArtDetail = () => {
 								}
 							
 								{
-									screen.matches ? 
+									isMobile ? 
 									(
 										null
 									) : 
@@ -628,7 +631,7 @@ const ArtDetail = () => {
 								{/* <div className="hr2"></div> */}
 								<p className="nft-dis">{nft.dis}</p>
 								{
-									!screen.matches ? 
+									!isMobile ? 
 									(
 										<>
 										{/* <div className="creators">

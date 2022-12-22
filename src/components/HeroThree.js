@@ -7,18 +7,21 @@ import Loading from './Loading'
 import gsap from 'gsap'
 import TopGalleryCart from './TopGalleryCart'
 import CurtainBtn from '../helpers/CurtainBtn'
+import { useAppContext } from '../contexts/appcontext'
 const Hero = ({MouseMove}) => {
+	const { isMobile } = useAppContext();
+	
 	const el = useRef();
-	var x = window.matchMedia("(max-width: 992px)")
-	var heroMedia = window.matchMedia("(min-width:993px) and (max-width: 1350px)")
-	const [deviceChange , setDeviceChange] = useState(x.matches)
+	// var x = window.matchMedia("(max-width: 992px)")
+	// var heroMedia = window.matchMedia("(min-width:993px) and (max-width: 1350px)")
+	// const [deviceChange , setDeviceChange] = useState(x.matches)
 	const dispatch = useDispatch()
 	const nftList = useSelector(state => state.nftList)
 	const {loading , nfts} = nftList
 	const [nftAuctionList , setNftAuctionList] = useState([])
-useEffect(()=> {
-console.log(MouseMove)
-},[])
+// useEffect(()=> {
+// console.log(MouseMove)
+// },[])
 	useEffect(() => {
 		dispatch(listNfts())
 		
@@ -37,23 +40,23 @@ console.log(MouseMove)
 
 		
 	}
-	useEffect(() => {
-		window.addEventListener('resize', () => {
-			heroMedia = window.matchMedia("(min-width:993px) and (max-width: 1350px)")
-			x = window.matchMedia("(max-width: 992px)")
-			if(deviceChange === x.matches){
+	// useEffect(() => {
+	// 	window.addEventListener('resize', () => {
+	// 		heroMedia = window.matchMedia("(min-width:993px) and (max-width: 1350px)")
+	// 		x = window.matchMedia("(max-width: 992px)")
+	// 		if(deviceChange === x.matches){
 			
-			}else{
-				setDeviceChange(prev => x.matches)
+	// 		}else{
+	// 			setDeviceChange(prev => x.matches)
 	
-			}
+	// 		}
 		
-		}
-		);
+	// 	}
+	// 	);
 		
-	},[x])
+	// },[x])
 	useEffect(() => {
-		if(!deviceChange){
+		if(!isMobile){
 			const hoverBg =  document.querySelector("#btn-test-three")
 		
 			const onMouseHover = () => {
@@ -88,9 +91,9 @@ console.log(MouseMove)
 		}
 
 		
-	},[])
+	},[isMobile])
 	useEffect(() => {
-		if(!deviceChange){
+		if(!isMobile){
 		const heroBtnHover = document.querySelector('.hero-btn-div .my-btns-div');
 		const heroBtnHoverText = document.querySelector('.hero-btn-div .my-btns-div .my-btns-text');
 		heroBtnHover.addEventListener('mouseover', (e) => {
@@ -105,10 +108,10 @@ console.log(MouseMove)
 		// 		})
 		// });
 }
-	},[])
+	},[isMobile])
 
 	useEffect(() => {
-		if(x.matches){
+		if(isMobile){
 			const slider = document.querySelector('.mobile-hero-other-nfts');
 			// const sliderItems = document.querySelector('.mobile-hero-other-nfts .mobile-hero-nft-card');
 			let isDown = false;
@@ -146,7 +149,7 @@ console.log(MouseMove)
 			});
 		}
 		
-	} , [x])
+	} , [isMobile])
 	// var btnX ;
 	// var btnY ;
 	// useEffect(() => {
@@ -192,7 +195,7 @@ console.log(MouseMove)
 	}
 	
 
-	if( deviceChange ){
+	if( isMobile ){
 		return (
 			
 			<div className="hero__2 container">
@@ -340,11 +343,7 @@ console.log(MouseMove)
 						
 					</div>
                         
-					{
-						!x.matches ? (
-							null
-						) : null
-					}
+					
 				</div>
 				{/* <div className="test-value"></div> */}
 					<div className="hero-nfts-border-div">
@@ -368,7 +367,7 @@ console.log(MouseMove)
 														{/* <HeroArtCart nft={n} /> */}
 														<TopGalleryCart nft={n}/>
 														{
-															x.matches ? (
+															isMobile ? (
 																i == 0 ? (
 																	<div className="space-x-20 mb-20 mt-30 d-flex justify-content-center hero-btn-div " >
 																	<Link className="btn btn-grad btn-md"

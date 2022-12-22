@@ -2,8 +2,11 @@ import React , {useEffect} from 'react'
 import { Link } from 'react-router-dom'
 import CurtainBtn from '../helpers/CurtainBtn'
 import gsap from 'gsap'
+import { useAppContext } from '../contexts/appcontext'
 const MarketData = () => {
-	var mobileCheck = window.matchMedia("(max-width: 992px)");
+	const { isMobile } = useAppContext();
+
+	// var mobileCheck = window.matchMedia("(max-width: 992px)");
 	// useEffect(() => {
 
 	// 	const hoverBg =  document.querySelector("#btn-test-three-test")

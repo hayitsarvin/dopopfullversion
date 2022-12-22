@@ -5,6 +5,7 @@ import { useLocation } from 'react-router-dom';
 import gsap from 'gsap';
 import LocomotiveScroll from 'locomotive-scroll';
 import CurtainBtn from '../helpers/CurtainBtn';
+import { useAppContext } from '../contexts/appcontext';
 var openHam = false
 var hideMode = false
 function useOutsideAlerter(ref, set) {
@@ -38,6 +39,7 @@ function useOutsideAlerter(ref, set) {
   }
 const Header = () => {
 	const headerRef = useRef();
+	const { isMobile } = useAppContext();
 const q = gsap.utils.selector(headerRef);
 	const [hideMode , setHideMode] = useState(false)
 // First we get the viewport height and we multiple it by 1% to get a value for a vh unit
@@ -53,23 +55,23 @@ window.addEventListener('resize', () => {
 	const [searchValue , setSearchValue] = useState("")
 	// burger.on('click', function (e) {
 	// 	e.stopPropagation();
-	var x = window.matchMedia("(max-width: 992px)")
-	const [deviceChange , setDeviceChange] = useState(x.matches)
+	// var x = window.matchMedia("(max-width: 992px)")
+	// const [deviceChange , setDeviceChange] = useState(x.matches)
 
-	useEffect(() => {
-		window.addEventListener('resize', () => {
+	// useEffect(() => {
+	// 	window.addEventListener('resize', () => {
 
-			x = window.matchMedia("(max-width: 992px)")
-			if(deviceChange === x.matches){
+	// 		x = window.matchMedia("(max-width: 992px)")
+	// 		if(deviceChange === x.matches){
 			
-			}else{
-				setDeviceChange(prev => x.matches)
+	// 		}else{
+	// 			setDeviceChange(prev => x.matches)
 	
-			}
-		}
-		);
+	// 		}
+	// 	}
+	// 	);
 		
-	},[x])
+	// },[x])
 	useEffect(() => {
 	const header = document.querySelector(".header__1");
 
@@ -79,17 +81,17 @@ window.addEventListener('resize', () => {
 			header.classList.add("active")
 	
 	}
-	const scroll = new LocomotiveScroll();
-	scroll.on('scroll', (args) => {
+	// const scroll = new LocomotiveScroll();
+	// scroll.on('scroll', (args) => {
 		
-	});
+	// });
 	
 	
 	})
 	useEffect(() => {
 	const header = document.querySelector(".header__1");
 
-		if(x.matches){
+		if(isMobile){
 			header.classList.add("active")
 
 			
@@ -98,7 +100,7 @@ window.addEventListener('resize', () => {
 			header.classList.remove("active")
 
 		}
-	},[x])
+	},[isMobile])
 	const burgerClickHandler =(e) => {
 		var input = document.querySelector(".header__mobile__menu input");
 		
@@ -217,9 +219,9 @@ window.addEventListener('resize', () => {
 						
 						
 						{
-							deviceChange ? (
+							isMobile ? (
 							<div ref={wrapperRef}>
-						{deviceChange ? 
+						{isMobile ? 
 						(
 							<>
 							{

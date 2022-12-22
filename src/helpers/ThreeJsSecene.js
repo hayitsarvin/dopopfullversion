@@ -3,24 +3,26 @@ import gsap from 'gsap/all';
 import React, { useEffect ,useRef, useState } from 'react'
 import { useLocation } from 'react-router';
 import * as THREE from 'three';
+import { useAppContext } from '../contexts/appcontext';
 import { vertexShader , fragmentShader } from './WebGL';
 
 const ThreeJsSecene = ({row}) => {
+	const { isMobile } = useAppContext();
 	
-	var x = window.matchMedia("(max-width: 992px)")
+	// var x = window.matchMedia("(max-width: 992px)")
 	var cols;
 	var rows;
 	const [myRow , setMyRow]= useState(45)
 	var onWindowResize ;
 	var camera, scene, renderer;
-	useEffect(() => {
-		window.addEventListener('resize', () => {
+	// useEffect(() => {
+	// 	window.addEventListener('resize', () => {
 
-			x = window.matchMedia("(max-width: 992px)")
-		}
-		);
+	// 		x = window.matchMedia("(max-width: 992px)")
+	// 	}
+	// 	);
 		
-	},[x])
+	// },[x])
     // const container = useRef(null)
 	const Location = useLocation()
 	
@@ -49,7 +51,7 @@ const ThreeJsSecene = ({row}) => {
       }
     
     useEffect(() => {
-		if(!x.matches){
+		if(!isMobile){
 			var main;
 			// var content;
 			var container;
@@ -74,7 +76,7 @@ const ThreeJsSecene = ({row}) => {
 				// var contentMargin = margin  * 0.25;
 				var containerHeight ;
 				if(Location.pathname == "/"){
-					if(x.matches){
+					if(isMobile){
 						containerHeight =  100;
 					}else{
 						containerHeight =  100;
@@ -219,8 +221,8 @@ const ThreeJsSecene = ({row}) => {
 				
 				//check window for resize This will give us the proper resolution values to bind
 				onWindowResize();
-				window.addEventListener('resize', onWindowResize, false);
-				onMouseMove()
+				window.addEventListener('resize', onWindowResize , false);
+				onMouseMove();
 				window.addEventListener('mousemove', onMouseMove, false);
 				
 			}
@@ -244,11 +246,11 @@ const ThreeJsSecene = ({row}) => {
 			addVertex()
 			 init(); 
 			animate(); 
-				return () => destroyer()
+				return () => {destroyer()}
 		}
 
     },[] )
-    function destroyer(bubbleContainer) {
+    function destroyer() {
 		
 		if(onWindowResize){
 		
@@ -272,7 +274,9 @@ const ThreeJsSecene = ({row}) => {
 		// 	mat = null;
 		// }
 		if(renderer){
+			renderer.dispose()
 			renderer = null;
+			console.log("r",renderer)
 		}
 		// if(shapeGroup){
 		// 	shapeGroup = new THREE.Group();
@@ -282,7 +286,7 @@ const ThreeJsSecene = ({row}) => {
         //   bubbleContainer.firstElementChild.remove()
         // }
       }
-	  if(!x.matches){
+	  if(!isMobile){
 		return (
     
 			<>

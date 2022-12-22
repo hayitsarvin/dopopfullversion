@@ -14,6 +14,7 @@ import TopGalleryCart from '../components/TopGalleryCart'
 import Footer from '../components/Footer'
 import $ from 'jquery';
 import gsap from 'gsap/all'
+import { useAppContext } from '../contexts/appcontext'
 var closeOrderTap ;
 function useOutsideAlerter(ref) {
 	useEffect(() => {
@@ -39,16 +40,20 @@ function useOutsideAlerter(ref) {
   }
 
 const Explore = () => {
+	const { isMobile } = useAppContext();
 	
 	var mySortType;
 	var screen = window.matchMedia("(max-width: 530px)")
-	useEffect(() => {
-		window.addEventListener('resize', () => {
+	const screenResizer = ()=> {
+		screen = window.matchMedia("(max-width: 530px)")
 
-			screen = window.matchMedia("(max-width: 530px)")
+	}
+	useEffect(() => {
+		window.addEventListener('resize',screenResizer);
+		return ()=> {
+		window.removeEventListener('resize',screenResizer);
+
 		}
-		);
-		
 
 	},[screen])
 	// useEffect(() => {
@@ -107,13 +112,13 @@ const Explore = () => {
 
 		}
 	}
-	var x = window.matchMedia("(max-width: 992px)")
+	// var x = window.matchMedia("(max-width: 992px)")
 	useEffect(() => {
-		window.addEventListener('resize', () => {
-			setExploreModeOpen(false)
-			x = window.matchMedia("(max-width: 992px)")
-		}
-		);
+		// window.addEventListener('resize', () => {
+		// 	setExploreModeOpen(false)
+		// 	x = window.matchMedia("(max-width: 992px)")
+		// }
+		// );
 		const titlePopup = document.querySelector(".explore-page .explore-span")
 		const titleDiv = document.querySelector(".hero__collections")
 		
@@ -137,7 +142,7 @@ const Explore = () => {
 		// 	  }
 		//   }
 		// console.log("2" ,titlePopup.getBoundingClientRects())
-	}, [x ,exploreModeOpen])
+	}, [isMobile , exploreModeOpen])
 
 	useEffect(() => {
 		dispatch(listNfts())

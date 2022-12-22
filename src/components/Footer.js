@@ -1,32 +1,34 @@
 import React,{useEffect,useState} from 'react'
 import { Link } from 'react-router-dom'
+import { useAppContext } from '../contexts/appcontext';
 import CurtainBtn from '../helpers/CurtainBtn'
 
 const Footer = () => {
-	var screen = window.matchMedia("(max-width: 992px)")
-	const [deviceChange , setDeviceChange] = useState(screen.matches)
+	const { isMobile } = useAppContext();
+	// var screen = window.matchMedia("(max-width: 992px)")
+	// const [deviceChange , setDeviceChange] = useState(screen.matches)
 
-	useEffect(() => {
-		window.addEventListener('resize', () => {
+	// useEffect(() => {
+	// 	window.addEventListener('resize', () => {
 
-			screen = window.matchMedia("(max-width: 992px)")
-			if(deviceChange === screen.matches){
+	// 		screen = window.matchMedia("(max-width: 992px)")
+	// 		if(deviceChange === screen.matches){
 			
-			}else{
-				setDeviceChange(prev => screen.matches)
+	// 		}else{
+	// 			setDeviceChange(prev => screen.matches)
 	
-			}
-		}
-		);
+	// 		}
+	// 	}
+	// 	);
 		
-	},[screen])
+	// },[screen])
     return (
         <footer className="footer__1 ">
 			<div className="container">
 				<div className="container">
 					<div className="row container m-p-r-l-0-mobile">
 						{
-							deviceChange ?<>
+							isMobile ?<>
 							<div className="footer__logo">
 								<a href="/">
 									<img src="/img/logos/white-dopop-logo.svg" className="footer-logo" alt="logo" id="logo_js_f" />
@@ -76,7 +78,7 @@ const Footer = () => {
 								<li> <Link to="/">Home</Link>
 								</li>
 								{
-									screen.matches ? (<li> <Link to="/contact">Contact Us</Link> </li>)
+									isMobile ? (<li> <Link to="/contact">Contact Us</Link> </li>)
 									: null
 								}
 								{/* <li> <a href="Marketplace.html"> Marketplace
@@ -85,7 +87,7 @@ const Footer = () => {
 							</ul>
 						</div>
 						{
-							screen.matches ? null :
+							isMobile ? null :
 							
 						<div className="col-xl-2 col-lg-2 col-6">
 							<h6 className="footer__title">Creator</h6>
@@ -133,10 +135,10 @@ const Footer = () => {
 								</ul>
 							</div>
 							{
-								screen.matches ? <hr/> : null
+								isMobile ? <hr/> : null
 							}
 							{
-								screen.matches ? null :(
+								isMobile ? null :(
 									<div>
 									<a href="https://deveb.co"  id="copyright-web" target="_blank" className="copyright" style={{marginTop : "105px "  }}>
 									Design & Development
@@ -152,7 +154,7 @@ const Footer = () => {
 							}
 							</div>
 						{
-							screen.matches ? (
+							isMobile ? (
 								<div className=" col-12 col-sm-12 copyright-div">
 									<div className="left-copyright">
 											<Link to="/privacy" className="copyright">Privacy policy</Link>

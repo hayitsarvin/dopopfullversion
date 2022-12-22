@@ -4,10 +4,11 @@ import { useSelector, useDispatch } from 'react-redux'
 import { listNfts } from '../actions/nftActions'
 import { Link } from 'react-router-dom'
 import Loading from './Loading'
+import { useAppContext } from '../contexts/appcontext'
 const Hero = () => {
-
-	var x = window.matchMedia("(max-width: 992px)")
-	const [deviceChange , setDeviceChange] = useState(x.matches)
+	const { isMobile } = useAppContext();
+	// var x = window.matchMedia("(max-width: 992px)")
+	// const [deviceChange , setDeviceChange] = useState(x.matches)
 	const dispatch = useDispatch()
 	const nftList = useSelector(state => state.nftList)
 	const {loading , nfts} = nftList

@@ -1,29 +1,30 @@
 import React,{useEffect, useState} from 'react'
 import { Link } from 'react-router-dom'
+import { useAppContext } from '../contexts/appcontext';
 
 const HeroCreators = () => {
-	
-	const x = window.matchMedia("(max-width: 992px)")
-	const [deviceChange , setDeviceChange] = useState(x.matches)
+	const { isMobile } = useAppContext();
+	// const x = window.matchMedia("(max-width: 992px)")
+	// const [deviceChange , setDeviceChange] = useState(x.matches)
 
-	useEffect(() => {
-		window.addEventListener('resize',windowSizeChange);
+	// useEffect(() => {
+	// 	window.addEventListener('resize',windowSizeChange);
 
-		return () => {
-			window.removeEventListener('resize',windowSizeChange)
-		}
+	// 	return () => {
+	// 		window.removeEventListener('resize',windowSizeChange)
+	// 	}
 		
-	},[x])
+	// },[x])
 
-	const windowSizeChange = () => {
-		x = window.matchMedia("(max-width: 992px)")
-		if(deviceChange === x.matches){
+	// const windowSizeChange = () => {
+	// 	x = window.matchMedia("(max-width: 992px)")
+	// 	if(deviceChange === x.matches){
 		
-		}else{
-			setDeviceChange(prev => x.matches)
+	// 	}else{
+	// 		setDeviceChange(prev => x.matches)
 			
-		}
-	}
+	// 	}
+	// }
 
 	return (
 			<div className="hero__creators">
@@ -38,7 +39,7 @@ const HeroCreators = () => {
 										</div>
 								</div>
 					{
-						!deviceChange ? (
+						!isMobile ? (
 							<div className="btn-div">	
 								<Link className="btn btn-grad  btn-dark btn-hover" to="/register"> Be a creator
 								</Link>

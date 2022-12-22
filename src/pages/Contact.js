@@ -2,11 +2,14 @@ import React,{useState , useEffect} from 'react'
 import ContactPopup from '../components/ContactPopup'
 import Footer from '../components/Footer'
 import PrivacyCheck from '../components/PrivacyCheck'
+import { useAppContext } from '../contexts/appcontext'
 import CurtainBtn from '../helpers/CurtainBtn'
 import ThreeJsSecene from '../helpers/ThreeJsSecene'
 import useLoco from '../hooks/useLoco'
 
 const Contact = () => {
+	const { isMobile } = useAppContext();
+
 	const [contactPopupOpen , setContactPopupOpen] = useState(false)
 	// useEffect(() => {
 	// 	const body =  document.querySelector("body");
@@ -16,15 +19,15 @@ const Contact = () => {
 
 	// 	})
 	// })
-	var x = window.matchMedia("(max-width: 992px)")
-	useEffect(() => {
-		window.addEventListener('resize', () => {
+	// var x = window.matchMedia("(max-width: 992px)")
+	// useEffect(() => {
+	// 	window.addEventListener('resize', () => {
 
-			x = window.matchMedia("(max-width: 992px)")
-		}
-		);
+	// 		x = window.matchMedia("(max-width: 992px)")
+	// 	}
+	// 	);
 		
-	},[x])
+	// },[x])
 	// useLoco(x.matches)
   return (
 
@@ -41,7 +44,7 @@ const Contact = () => {
 			            <div className="container">
 			                <div className="content__wrap space-y-20">
 			                    <div className="space-y-20">
-			                        <h1 className="text-center">{x.matches ? "Get in touch" : "Contact us"}</h1>
+			                        <h1 className="text-center">{isMobile ? "Get in touch" : "Contact us"}</h1>
 			                        
 			                    </div>
 			                    <div className="box is__big back-blur back-glass-effect">

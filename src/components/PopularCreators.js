@@ -6,16 +6,19 @@ import gsap from "gsap"
 import ScrollTrigger from 'gsap/ScrollTrigger'
 import Loading from './Loading'
 import { nodeName } from 'jquery'
+import { useAppContext } from '../contexts/appcontext'
 function PopularCreators(props) {
-	var x = window.matchMedia("(max-width: 992px)")
-    useEffect(() => {
-		window.addEventListener('resize', () => {
-			x = window.matchMedia("(max-width: 992px)")
+	const { isMobile } = useAppContext();
+
+	// var x = window.matchMedia("(max-width: 992px)")
+    // useEffect(() => {
+	// 	window.addEventListener('resize', () => {
+	// 		x = window.matchMedia("(max-width: 992px)")
 		
-		}
-		);
+	// 	}
+	// 	);
 		
-	},[x])
+	// },[x])
 	gsap.registerPlugin(ScrollTrigger);
 	var screen = window.matchMedia("(max-width: 530px)")
 
@@ -29,14 +32,18 @@ function PopularCreators(props) {
 		dispatch(listUser())
 
 	}, [dispatch])
-	useEffect(() => {
-		window.addEventListener('resize', () => {
+	const ChangeScreen = () => {
+		screen = window.matchMedia("(max-width: 530px)")
 
-			screen = window.matchMedia("(max-width: 530px)")
+	}
+	useEffect(() => {
+		window.addEventListener('resize', ChangeScreen);
+		return()=>{
+		window.removeEventListener('resize', ChangeScreen);
+
 		}
-		);
-		
 	},[screen])
+	
 	useEffect(() => {
 	
 			setTopUsers(prev => {

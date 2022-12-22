@@ -13,28 +13,7 @@ function HeroArtCart(props) {
 	useEffect(() => {
 		setHighestBid(GetHighestBidIndex(nft.bids));
 	},[])
-	useEffect(() => {
-		
-		// const cards =  document.querySelectorAll(".hero__2 .card__item")
-		
-		// const image =  document.querySelectorAll(".nft-image")
-		
-		// if(cardRef){
-	
 
-		// cardRef.current.addEventListener("mouseenter" ,() => {
-		// 		gsap.set(imageTwoRef.current , {
-		// 			duration:0,
-		// 			opacity:1
-		// 		})
-		// 		gsap.to(imageTwoRef.current , {
-		// 			duration: 0.3,
-		// 			scale: 1,
-		// 			skewY: "0 deg"
-		// 		})
-		// 	})
-		// }
-	} , [])
 	
     return (
         <div className="card__item one is__hero" ref={cardRef}>

@@ -12,16 +12,17 @@ const TopGallery = () => {
 	const [nftAuctionList , setNftAuctionList] = useState([])
 	var x = window.matchMedia("(max-width: 990px)")
 	var tablet = window.matchMedia("(min-width: 600px) and (max-width: 990px)")
-	
+	const windowResizer = () => {
+		x = window.matchMedia("(max-width: 990px)")
+		tablet = window.matchMedia("(min-width: 600px) and (max-width: 990px)")
+   
+	}
 	useEffect(() => {
-		window.addEventListener('resize', () => {
-
-			x = window.matchMedia("(max-width: 990px)")
-	 tablet = window.matchMedia("(min-width: 600px) and (max-width: 990px)")
+		window.addEventListener('resize', windowResizer);
+		return ()=>{
+		window.removeEventListener('resize', windowResizer);
 
 		}
-		);
-		
 	},[x])
 	useEffect(() => {
 		dispatch(listNfts())

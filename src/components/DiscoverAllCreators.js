@@ -5,47 +5,46 @@ import { useSelector, useDispatch } from 'react-redux'
 import $ from 'jquery';
 import { listUser } from '../actions/userActions'
 import gsap from 'gsap'
+import { useAppContext } from '../contexts/appcontext';
 var closeOrderTap ;
 function useOutsideAlerter(ref) {
 	useEffect(() => {
-	  /**
-	   * Alert if clicked on outside of element
-	   */
 	  function handleClickOutside(event) {
 		if (ref.current && !ref.current.contains(event.target)) {
-		//   alert("You clicked outside of me!");
+
 		  closeOrderTap()
-		// openHam = false
+
 
 		}
 	  }
-	  // Bind the event listener
+
 	  document.addEventListener("mousedown", handleClickOutside);
 	  return () => {
-		// Unbind the event listener on clean up
+
 		document.removeEventListener("mousedown", handleClickOutside);
 	  };
 	}, [ref]);
   }
+
 const DiscoverAllCreators = () => {
-	var x = window.matchMedia("(max-width: 992px)")
+	const { isMobile } = useAppContext();
+	// var x = window.matchMedia("(max-width: 992px)")
+	// const windowResize = () => {
+	// 	x = window.matchMedia("(max-width: 992px)")
+	// }
 	useEffect(() => {
-		window.addEventListener('resize', () => {
-
-			x = window.matchMedia("(max-width: 992px)")
-		}
-		);
+		// window.addEventListener('resize', windowResize);
 		const titlePopup = document.querySelector(".section__creators .discover-span")
-		// const titleDiv = document.querySelector(".hero__collections")
-		
+
+
 		const Popup = document.querySelector(".section__creators  .order-type-dropdown ")
-		// Popup.style.left = `${titlePopup.getClientRects()[0].left}px`;
-		// Popup.style.top = `${titleDiv.getBoundingClientRects()[0].bottom}px`;
+
 
 		
-		gsap.set(Popup , {left:($(".section__creators .discover-span").position().left + (x.matches ? 12 : 0)), top: ($(".section__creators .discover-span").position().top + $(".section__creators .discover-span").outerHeight(true)) + 10})
+		gsap.set(Popup , {left:($(".section__creators .discover-span").position().left + (isMobile ? 12 : 0)), top: ($(".section__creators .discover-span").position().top + $(".section__creators .discover-span").outerHeight(true)) + 10})
 		
-	},[x])
+	},[isMobile])
+	
 	closeOrderTap = () => {
 		setOrderOpen(false)
 	}
@@ -110,12 +109,12 @@ const DiscoverAllCreators = () => {
     return (
         <div className="section__creators mt-200">
 				<div className="container p-0">
-					<div  className={x.matches ? "space-y-30 container" : "space-y-30" }>
+					<div  className={isMobile ? "space-y-30 container" : "space-y-30" }>
 						<div className="section_head">
 							<div className="row justify-content-between
 								align-items-center">
 								<div className="col-lg-8 col-md-6 col-sm-7 moblie-full-width-630">
-									<h2 className="section__title"><span  ref={orderDivRef} className="discover-span" onClick={() => {setOrderOpen(prev => !prev)}}>{x.matches ? (orderType == "Top Rated" ? "Top Rtd" : orderType) : orderType}<img className="arrow-down" src="/img/icons/arrow-down.svg" /></span>Creators</h2>
+									<h2 className="section__title"><span  ref={orderDivRef} className="discover-span" onClick={() => {setOrderOpen(prev => !prev)}}>{isMobile ? (orderType == "Top Rated" ? "Top Rtd" : orderType) : orderType}<img className="arrow-down" src="/img/icons/arrow-down.svg" /></span>Creators</h2>
 								</div>
 								<div className={orderOpen ? "order-type-dropdown active" : "order-type-dropdown dn" } onClick={() => {setOrderOpen(false) }} >
 											<a className={sortType === "Popular" ? "dropdown-item active-item" :"dropdown-item"} onClick={(e) => {setOrderType(e.target.innerText); e.preventDefault(); sortNftList(e.target.innerText)}}  href="#">Popular</a>

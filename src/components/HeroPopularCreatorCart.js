@@ -1,24 +1,27 @@
 import React,{ useEffect, useLayoutEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { gsap } from 'gsap'
+import { useAppContext } from '../contexts/appcontext'
 
 const HeroPopularCreatorCart = (props) => {
 	const {user} = props
-	var x = window.matchMedia("(max-width: 990px)")
-	useEffect(() => {
-		window.addEventListener('resize', () => {
+	const { isMobile } = useAppContext();
 
-			x = window.matchMedia("(max-width: 990px)")
-		}
-		);
+	// var x = window.matchMedia("(max-width: 990px)")
+	// useEffect(() => {
+	// 	window.addEventListener('resize', () => {
+
+	// 		x = window.matchMedia("(max-width: 990px)")
+	// 	}
+	// 	);
 		
-	},[x])
+	// },[x])
 
 	const creatorCard = useRef(null)
 
 	useLayoutEffect(() => {
 
-		if( x.matches ) return
+		if( isMobile ) return
 
 		creatorCard.current.addEventListener('mouseenter', scaleUpCard)
 		creatorCard.current.addEventListener('mouseleave', scaleDownCard)
@@ -27,7 +30,7 @@ const HeroPopularCreatorCart = (props) => {
 			creatorCard.current.removeEventListener('mouseenter', scaleUpCard)
 			creatorCard.current.removeEventListener('mouseleave', scaleDownCard)
 		};
-	}, [])
+	}, [isMobile])
 
 	const cardContent = useRef(null)
 	const scaleUpCard = () => {
@@ -71,7 +74,7 @@ const HeroPopularCreatorCart = (props) => {
 										</Link>
 										
 										<span className="sales color_text">{user.total_sold_nft} sales on {
-											x.matches ? <br />
+											isMobile ? <br />
 											: null
 										}<span>{user.total_sold_price} ETH</span></span>
 									</div>

@@ -1,7 +1,10 @@
 import React,{useEffect, useState} from 'react';
+import { useAppContext } from '../contexts/appcontext';
+
 
 const DarkMode = (props) => {
   const {screen} = props;
+  const { isMobile } = useAppContext();
   // const [modeHandle , setModeHandle] =  useState(true)
   var modeHandle = true
   const modeHandler = () => {
@@ -14,23 +17,23 @@ const DarkMode = (props) => {
       
     }
   }
-  var x = window.matchMedia("(max-width: 992px)")
-	const [deviceChange , setDeviceChange] = useState(x.matches)
+  // var x = window.matchMedia("(max-width: 992px)")
+	// const [deviceChange , setDeviceChange] = useState(x.matches)
 
-	useEffect(() => {
-		window.addEventListener('resize', () => {
+	// useEffect(() => {
+	// 	window.addEventListener('resize', () => {
 
-			x = window.matchMedia("(max-width: 992px)")
-      if(deviceChange === x.matches){
+	// 		x = window.matchMedia("(max-width: 992px)")
+  //     if(deviceChange === x.matches){
 			
-			}else{
-				setDeviceChange(prev => x.matches)
+	// 		}else{
+	// 			setDeviceChange(prev => x.matches)
 	
-			}
-		}
-		);
+	// 		}
+	// 	}
+	// 	);
 		
-	},[screen])
+	// },[screen])
     const lightMode = () => {
       const light =document.querySelector(".mode .mode-icon")
 
@@ -41,7 +44,7 @@ const DarkMode = (props) => {
           body.classList.remove("is__dark")
           // light.classList.add("is_active")
           // dark.classList.remove("is_active")
-          if(deviceChange){
+          if(isMobile){
             light.classList.remove("mode")
           light.classList.add("arvin")
           }
@@ -51,7 +54,7 @@ const DarkMode = (props) => {
           // document.getElementById("brand_js").src = "/img/logos/blackBrandName.svg";
           document.getElementById("logo_js_f").src = "/img/logos/new-logo-black.svg";
 
-          if(!deviceChange){
+          if(!isMobile){
           document.getElementById("logo_js_f").src = "/img/logos/new-logo-black.svg";
           // document.getElementById("brand_js_f").src = "/img/logos/blackBrandName.svg";
           }
@@ -80,7 +83,7 @@ const DarkMode = (props) => {
           // document.getElementById("brand_js").src = "/img/logos/darkBrandName.svg";
           document.getElementById("logo_js_f").src = "/img/logos/new-logo-white.svg";
 
-          if(!deviceChange){
+          if(!isMobile){
           // document.getElementById("brand_js_f").src = "/img/logos/darkBrandName.svg";
           document.getElementById("logo_js_f").src = "/img/logos/new-logo-white.svg";
           }
@@ -96,7 +99,7 @@ const DarkMode = (props) => {
       }else if( mode =="light"){
         lightMode()
       }
-    })
+    },[])
   return (
     // <div className="bg-dark py-10">
     <div className="container dark-mode-div">

@@ -29,17 +29,17 @@ const Home = () => {
     const revealMarket = useRef()
 
 
-	var x = window.matchMedia("(max-width: 992px)");
+	// var x = window.matchMedia("(max-width: 992px)");
 
-    const [rows , setRows] = useState(200)
-    useEffect(() => {
-		window.addEventListener('resize', () => {
-			x = window.matchMedia("(max-width: 992px)")
+  //   const [rows , setRows] = useState(200)
+  //   useEffect(() => {
+	// 	window.addEventListener('resize', () => {
+	// 		x = window.matchMedia("(max-width: 992px)")
   
-		}
-		);
+	// 	}
+	// 	);
 		
-	},[x])
+	// },[x])
   // useLoco(!isMobile)
 
   

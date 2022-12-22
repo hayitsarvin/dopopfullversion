@@ -217,6 +217,24 @@ const Mouse = () => {
           // heroTitle2.addEventListener('mouseleave', onMouseHoverOutOnTitle)
           // heroTitle.addEventListener('mouseClick', onMouseHoverOutOnTitle)s
         // }
+        return ()=>{
+          if(devebLink){
+          
+            devebLink.removeEventListener('mouseenter', onMouseHoverOnLinks)
+            devebLink.removeEventListener('mouseleave', onMouseHoverOutOnLinks)
+           
+          }
+          
+        
+          if(btns){
+            btns.forEach((btn , i) => {
+              btn.removeEventListener('mouseenter', onMouseHover)
+              btn.removeEventListener('mouseleave', onMouseHoverOut)
+            })
+          }
+        document.body.removeEventListener('mousemove', onMouseMove);
+
+        }
     } , [location,cardItems , sliderItems])
     useEffect(() => {
       const mouseCircle = document.querySelector(".mouse-circle")

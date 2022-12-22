@@ -129,36 +129,34 @@ const TodaysPick = () => {
 	var smallWeb = window.matchMedia("(min-width: 990px) and (max-width: 1200px)")
 	const [deviceChange , setDeviceChange] = useState(x.matches)
 	const [deviceTablet , setDeviceTablet] = useState(tablet.matches)
+	const windowResizeCheck = () => {
 
+		x = window.matchMedia("(max-width: 990px)")
+var tablet = window.matchMedia("(min-width: 600px) and (max-width: 990px)")
+if(deviceChange === x.matches){
+		
+}else{
+	setDeviceChange(prev => x.matches)
+
+}
+if(deviceTablet === tablet.matches){
+		
+}else{
+	setDeviceTablet(prev => tablet.matches)
+
+}
+
+
+	}
 	useEffect(() => {
-		window.addEventListener('resize', () => {
-
-			x = window.matchMedia("(max-width: 990px)")
-	var tablet = window.matchMedia("(min-width: 600px) and (max-width: 990px)")
-	if(deviceChange === x.matches){
+		window.addEventListener('resize', windowResizeCheck);
+		return()=> {
+		window.removeEventListener('resize', windowResizeCheck);
 			
-	}else{
-		setDeviceChange(prev => x.matches)
-
-	}
-	if(deviceTablet === tablet.matches){
-			
-	}else{
-		setDeviceTablet(prev => tablet.matches)
-
-	}
-	
-
 		}
-		);
 		
 	},[x])
-	useEffect(() => {
-		// window.addEventListener('mousemove', (e) => {
-			// console.log("x =" ,e.x ,"y =" , e.y)
-		// })
-		
-	}, [loading ,exploreModeOpen])
+
 	const popupPosition = () => {
 		const titlePopup = document.querySelector(".todaysPick .explore-span")
 		// console.log("title" ,titlePopup.getClientRects() )
