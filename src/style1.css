@@ -1,3 +1,6 @@
+html {
+    font-size: calc(0.28rem + 0.75vw)
+}
 body{
     overflow-x: hidden;
     overflow-y: overlay;
@@ -62,7 +65,7 @@ body{
     position: relative;
 }
 .my-btns-div .btn-hover, .my-btns-div .btn.btn-hover-tablet{
-    padding: 30px 90px;
+    padding: 40px 90px;
     transform-origin: center;
 }
 .my-btns-div .my-btns-text{
@@ -71,7 +74,7 @@ body{
     margin-left: 0 !important;
     color: white;
     font-weight: 500;
-    font-size: 16px;
+    font-size: 1rem;
     left: 50%;
     text-align: center !important;
     pointer-events: none;
@@ -149,7 +152,8 @@ body.is__dark{
     margin-bottom: 21px;
     /* box-sizing: 20px; */
     border-radius: 20px;
-    height: 275px;
+   max-height: 65rem;
+   max-width: 65rem;
     width: 100%;
     overflow: hidden;
 
@@ -388,6 +392,7 @@ font-weight: 600;
 .sc-card-product .card-title h5 a{
     font-weight: 600;
     color: #F5F6F7;
+    font-size: 1.06rem;
 }
 .sc-card-product .info h6 a{
     font-weight: 600;
@@ -1170,7 +1175,7 @@ backdrop-filter: blur(5px);
 
   }
   .market-data-div .section__title {
-      font-size: 47px;
+      font-size: 2.94rem;
       font-weight: 500;
       line-height: 70px;
       letter-spacing: 2px;
@@ -1415,7 +1420,7 @@ background: black !important;
 .hero__2 .hero__title{
     text-transform: capitalize;
     font-weight: 600;
-    font-size: 45px;
+    font-size: 2.8125rem;
     letter-spacing: 1.5px;
 }
 .is__light .hero__2 .hero__title {
@@ -1846,7 +1851,7 @@ body.is__dark.body-login{
 }
 #popularCreators .section_head .section__title{
     font-weight: 500;
-    font-size: 55px;
+    font-size: 3.4375rem;
     margin-left: -17px;
 }
 .mt-200{
@@ -1964,6 +1969,12 @@ body.is__dark.body-login{
     font-weight: 500;
     font-size: 57px;
 }
+#popularCreators .creator-popular-link{
+    position: relative;
+    margin-left: 0.6875rem;
+    margin-right: 0.6875rem;
+    margin-bottom: 0.43rem;
+}
 .hero__creators{
     padding-top: 173px !important;
     padding-bottom: 66px !important;
@@ -2039,7 +2050,7 @@ body.is__dark.body-login{
 }
 .item_details .right-side-div .nft-info-left .nft-name{
     font-weight: 500;
-    font-size: 42px;
+    font-size: 2.625rem;
     line-height: 64px;
     margin-top: 18px;
     letter-spacing: 0px;
@@ -2603,6 +2614,7 @@ a.btn-primary{
 }
 
 @media only screen and (min-width: 992px) {
+    
     .effect div.col-lg-9{
         padding-left: 3% !important;
         padding-right: 3% !important;
@@ -2710,8 +2722,20 @@ a.btn-primary{
 
 
 @media only screen and (max-width: 992px) {
+    #popularCreators .avatars .avatar.avatar-md {
+        height: 12rem;
+        width: 12rem;
+    }
+    #popularCreators .creator-popular-link{
+        margin-left: 0.9rem;
+    margin-right: 0.9rem;
+    margin-bottom: 0.9rem;
+    }
     .hero-creators-div{
         padding-left: 0 !important;
+    }
+    .my-btns-div .my-btns-text{
+        font-size: 2rem !important;
     }
     .slider-item.todays-pick-card svg ,svg rect{
         display: none;
@@ -3470,7 +3494,7 @@ div.btns-and-avatar-div h5{
         margin-left: 12px;
     }
     .header__1 .header__logo img{
-        height: 1.2rem !important;
+        height: 2rem !important;
         margin-left: 0px;
 
     }
@@ -3488,7 +3512,7 @@ div.btns-and-avatar-div h5{
     }
     .connect-wallet-btn-div .my-btns-div #btn-test-three-test {
         padding: 2rem 0.1rem !important;
-        font-size: 1.1rem !important;
+        font-size: 1.8rem !important;
     }
     
     .btn-mobile{
@@ -3515,7 +3539,7 @@ div.btns-and-avatar-div h5{
    
     .register .color_white{
         text-align: left !important;
-        font-size: 48px !important;
+        font-size: 5rem !important;
     }
     .register p.color_white{
         margin-top: 44px !important;
@@ -3538,7 +3562,7 @@ div.btns-and-avatar-div h5{
         background-color: transparent !important;
     }
     .hero__2 .hero__title{
-        font-size: 44px;
+        font-size: 5rem;
         text-align: left !important;
         /* padding-left: 20px; */
         font-weight: 500;
@@ -3559,11 +3583,11 @@ div.btns-and-avatar-div h5{
         /* opacity: 0.3; */
         width: 100%;
     }
-    .sc-card-product .card-media{
+    /* .sc-card-product .card-media{
         height: 350px;
-    }
+    } */
     .slider-item .sc-card-product .card-title .style2 a{
-        font-size: 22px;
+        font-size: 1.4rem;
     }
     div.market-data-page {
         height: 50vh;
@@ -3579,11 +3603,11 @@ div.btns-and-avatar-div h5{
     div.market-data-div .section__title{
         line-height: 50px !important;
         font-weight: 500 !important;
-        font-size: 30px !important;
+        font-size: 3.96rem !important;
         letter-spacing: 1px;
     }
     .connect-wallet-btn-div{
-        width: 60% !important;
+        width: 25rem !important;
     }
     #footer-send-email-input{
         padding: 20px;
@@ -3611,11 +3635,14 @@ div.btns-and-avatar-div h5{
         border-radius: 30px;
     }
     .card__item.three .card_head {
-        height: 400px !important;
+        /* height: 400px !important; */
         max-height: initial !important;
     }
-    .slider-item .sc-card-product .meta-info .info h6 a,.card__item.three .card_footer .place-bid-card-footer-div .footer-bid-price-div h6 ,  .slider-item .sc-card-product .meta-info  .price h5 ,.card__item.three .card_footer .meta-info .info h6 , .card__item.three .card_footer .meta-info .countdown_item p {
+    .card__item.three .card_footer .place-bid-card-footer-div .footer-bid-price-div h6 ,  .slider-item .sc-card-product .meta-info  .price h5 ,.card__item.three .card_footer .meta-info .info h6 , .card__item.three .card_footer .meta-info .countdown_item p {
         font-size: 17px !important;
+    }
+    .slider-item .sc-card-product .meta-info .info h6 a{
+        font-size: 1.45rem !important;
     }
     .card__item.three .card_footer .place-bid-card-footer-div .footer-place-bid-btn-div a{
         padding: 15px 55px 15px 55px !important;
@@ -3637,7 +3664,7 @@ div.btns-and-avatar-div h5{
         padding-left: 0;
     }
     #popularCreators .section_head .section__title , #todaysPick .section__title , .section__title ,.hero__collections h1 , .hero__creators h1,.register h1 , .contact h1 , .effect h2 , .hero_privacy h1 {
-        font-size: 44px !important;
+        font-size: 5rem !important;
         font-weight: 500 !important;
     }
     .contact .contact__content h1{
@@ -3811,7 +3838,7 @@ div.btns-and-avatar-div h5{
         margin-top: 158px ;
     }
     .section__title{
-        text-align: center;
+        /* text-align: center; */
         margin-bottom: 12% !important;
         
     }
@@ -3822,10 +3849,10 @@ div.btns-and-avatar-div h5{
         text-align: center;
     }
     #topGallery .section__title {
-        font-size: 48px !important;
+        font-size: 4.02rem !important;
     }
     #todaysPick .section__title{
-        font-size: 43px !important;
+        font-size: 5rem !important;
     }
     .hero__2 .wrapper{
         margin-bottom: 0 !important;
@@ -3976,6 +4003,10 @@ text-align: right;
     .section__head{
         display: block !important;
     }
+    #todaysPick .section__head{
+        padding-right: calc(var(--bs-gutter-x)/ 2) !important;
+    padding-left: calc(var(--bs-gutter-x)/ 2) !important;
+    }
     .sc-card-product:hover{
         transform: none !important;
     }
@@ -4080,6 +4111,12 @@ text-align: right;
         height: 35px !important;
     }
   }
+  
+  @media only screen and (min-width: 991px ) and (max-width: 992px) {
+    .col-lg-4{
+        width: 50% !important;
+    }
+  }
   @media only screen and (min-width: 750px ) and (max-width: 992px) {
     .header__mobile.js-header-mobile .container{
         padding-right: calc(var(--bs-gutter-x)/ 1.2) !important;
@@ -4088,11 +4125,11 @@ text-align: right;
     .creator-page {
         margin-top: 150px;
     }
-    .sc-card-product .card-media{
+    /* .sc-card-product .card-media{
         height: 300px;
-    }
+    } */
     div.market-data-div .section__title{
-        font-size: 40px !important;
+        font-size: 3.36rem !important;
     }
   }
   @media only screen and (min-width: 650px ) and (max-width: 750px) {
@@ -4132,7 +4169,10 @@ text-align: right;
 }
 @media only screen and (min-width: 992px ) and (max-width: 1400px) {
 
-    
+    #popularCreators .avatars .avatar.avatar-md{
+        height: 7rem;
+    width: 7rem;
+    }
     .header__1 .header__menu{
         margin-right: 10% !important;
     }
@@ -4157,13 +4197,34 @@ text-align: right;
         padding-right: 0;
     }
 }
-@media only screen and (min-width: 992px ) and (max-width: 1200px) {
 
+
+@media only screen and  (max-width: 1199px) {
+    .sc-card-product .card-title h5 a{
+        font-size: 1.5rem;
+    }
+
+}
+@media only screen and (min-width: 992px ) and (max-width: 1200px) {
+    #popularCreators .avatars .avatar.avatar-md{
+        height: 8rem;
+    width: 8rem;
+    }
+    .footer__1 .footer__social{
+        justify-content: flex-end;
+    }
+    .footer__1 .padding-right-zero-social{
+        text-align: right;
+    }
+    .register .right_part h1{
+
+        font-size: 4rem !important;
+    }
     .order-type-dropdown{
         width: 20%;
     }
     .hero__2 .hero__title{
-        font-size: 35px;
+        font-size: 2.1875rem;
     }
     .card__item.one .card_head{
         max-height: 260px !important;
@@ -4187,7 +4248,7 @@ text-align: right;
         padding: 5% 3%;
     }
     .item_details .right-side-div .nft-info-left .nft-name{
-        font-size: 39px ;
+        font-size: 2.9rem ;
     }
     .item_details .right-side-div .nft-info-left{
         padding: 5% 3%;
@@ -4272,6 +4333,10 @@ text-align: right;
     }
 }
   @media only screen and (min-width: 650px ) and (max-width: 992px) {
+    #popularCreators .avatars .avatar.avatar-md {
+        height: 9.5rem;
+        width: 9.5rem;
+    }
     .hero__2 .mobile-hero-single-nft .card__item{
         height: 500px !important;
     }
@@ -4414,7 +4479,7 @@ text-align: right;
         height: 600px !important;
     }
     .hero__2 .hero__title{
-        font-size: 65px;
+        font-size: 6.0625rem;
         line-height: 1.3 !important;
     }
     .card__item.one.is__hero .details .txt , .hero__2 .card__item .card_body .card_head .auction_end .countdown_item , .hero__2 .card__item .card_body .card_head span.txt_lg , .hero__2 .details .btn-bid{
@@ -4427,12 +4492,18 @@ text-align: right;
     .hero__2 .mobile-hero-other-nfts .mobile-hero-nft-card:nth-child(1) img{
         object-position: 50% 90%;
     }
-    .card__item.three .card_footer .meta-info .price span,.card__item.three .card_footer .meta-info .info span,.card__item.three .card_footer .place-bid-card-footer-div .footer-bid-price-div p,.slider-item .sc-card-product .meta-info .info h6 a, .card__item.three .card_footer .place-bid-card-footer-div .footer-bid-price-div h6, .slider-item .sc-card-product .meta-info .price h5, .card__item.three .card_footer .meta-info .info h6, .card__item.three .card_footer .meta-info .countdown_item p{
+    .card__item.three .card_footer .meta-info .price span,.card__item.three .card_footer .meta-info .info span,.card__item.three .card_footer .place-bid-card-footer-div .footer-bid-price-div p, .card__item.three .card_footer .place-bid-card-footer-div .footer-bid-price-div h6, .slider-item .sc-card-product .meta-info .price h5, .card__item.three .card_footer .meta-info .info h6, .card__item.three .card_footer .meta-info .countdown_item p{
         font-size: 12px !important;
+    }
+    .slider-item .sc-card-product .meta-info .info h6 a{
+        font-size: 1.4rem !important;
     }
     .card__item.three .card_footer .place-bid-card-footer-div .footer-place-bid-btn-div a {
         padding: 15px 35px 15px 35px !important;
         font-size: 14px;
+    }
+    .connect-wallet-btn-div .my-btns-div #btn-test-three-test{
+        font-size: 1.5rem !important;
     }
     .connect-wallet-btn-div .btn-grad {
         padding: 33px 20px;
@@ -4504,7 +4575,7 @@ text-align: right;
 }
 #todaysPick .section__title , .hero__collections h1{
     font-weight: 500;
-    font-size: 47px;
+    font-size: 2.94rem;
     padding-top: 20px;
     letter-spacing: 1px;
     
@@ -4535,14 +4606,12 @@ text-align: right;
     }
 
     .card__item .card_head{
-        border-radius: 45px !important;
+        /* border-radius: 45px !important; */
     }
     .card__item{
         border-radius: 45px !important;
     }
-    .hero__2 h1.hero__title{
-        font-size: 35px;
-    }
+   
     .hero__2 p.hero__text.sub-text {
         max-width: 17rem;
         font-size: 13px;
@@ -4552,7 +4621,7 @@ text-align: right;
         margin-top: 15px !important; 
     }
     .hero__2 div.hero-btn-div .btn.btn-grad{
-        padding: 20px 20px;
+        padding: 30px 20px;
     }
     div.hero__2{
         padding-top: 25px;
@@ -4844,7 +4913,33 @@ position: fixed;
     left: 0;
     transition: 0.3s all;
 opacity:0.7;
-
+z-index: 20;
+}
+.threejs-back::before{
+    content: "";
+    height: 150%;
+    width: 150%;
+    position: absolute;
+    top: -25%;
+    left: -25%;
+    z-index: 15;
+    opacity: 1;
+    background: transparent url(../public/img/bg/noise-transparent.png);
+    background-repeat: repeat;
+    animation: bg-animation 1s infinite;
+}
+@keyframes bg-animation {
+    0% { transform: translate(0,0) }
+    10% { transform: translate(-5%,-5%) }
+    20% { transform: translate(-10%,5%) }
+    30% { transform: translate(5%,-10%) }
+    40% { transform: translate(-5%,15%) }
+    50% { transform: translate(-10%,5%) }
+    60% { transform: translate(15%,0) }
+    70% { transform: translate(0,10%) }
+    80% { transform: translate(-15%,0) }
+    90% { transform: translate(10%,5%) }
+    100% { transform: translate(5%,0) }
 }
 .threejs-back canvas{
     filter: blur(12px);
@@ -4911,7 +5006,7 @@ opacity:0.7;
 }
 div.hero__2 .hero__title.hero__title__desktop{
     font-weight: 500;
-    font-size: 60px;
+    font-size: 3.75rem;
     line-height: 1.35;
 }
 .is__dark #btn-test-three{
@@ -5145,12 +5240,7 @@ z-index:-1;
     right: 0;
     bottom: 0;
 } */
-#popularCreators .creator-popular-link{
-    position: relative;
-    margin-left: 0.8%;
-    margin-right: 0.8%;
-    margin-bottom: 0.5%;
-}
+
 .contact .input-div-position{
     position: relative;
     padding: 0;
@@ -5443,3 +5533,47 @@ svg.card-border-svg path.red {
     -webkit-font-smoothing: subpixel-antialiased;
     will-change: transform;
   }
+  .page-transition-svg {
+
+	position: fixed;
+	inset: 0;
+	z-index: 1000;
+	pointer-events: none;
+    display: none;
+
+	
+}
+.page-transition-svg path {
+    fill: rgba(255, 255, 255, 1);
+    transform: translateX(-250px) translateY(80px) scale(1);
+}
+
+
+@media only screen and (max-width: 575px) {
+
+    .slider-item .sc-card-product .meta-info .info span ,  .slider-item .sc-card-product .meta-info .price span{
+        font-size: 2rem !important;
+    }
+    .slider-item .sc-card-product .meta-info .info h6 a , .slider-item .sc-card-product .meta-info .price h5{
+        font-size: 2.4rem !important;
+    }
+    .slider-item .sc-card-product .card-title .style2 a{
+        font-size: 2.3rem !important;
+
+    }
+
+}
+
+
+
+@media only screen and (min-width: 1600px) {
+    .market-data-div{
+        max-width: 70%;
+    }
+
+
+}
+.register .right_part h1{
+
+    font-size: 3.375rem;
+}

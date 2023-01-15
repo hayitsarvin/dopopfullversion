@@ -36,7 +36,7 @@ const Contact = () => {
 
     <div className="contact items-center">
 
-	<ThreeJsSecene />
+	<ThreeJsSecene  show={true}/>
 
 			    <div className="row items-center">
 			       

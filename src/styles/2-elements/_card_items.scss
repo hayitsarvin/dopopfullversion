@@ -132,9 +132,9 @@
 
 .card__item {
     @include card_item;
-    margin: auto;
+    // margin: auto;
     margin-bottom: 25px;
-    max-width: 30rem;
+    // max-width: 30rem;
     padding: 0 !important;
     overflow: hidden;
     transition: all 0.1s linear;
@@ -191,7 +191,7 @@
     .card_head {
         border-radius: 20px 20px 0px 0px;
         background-color: $color_body;
-        height: 22rem;
+        // height: 22rem;
         overflow: hidden;
         position: relative;
         z-index: 0;
@@ -359,7 +359,7 @@
             overflow: hidden;
         }
         .card_head {
-            max-height: 300px;
+            // max-height: 300px;
             position: relative;
             .action {
                 position: absolute;

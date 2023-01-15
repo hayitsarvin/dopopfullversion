@@ -60,7 +60,7 @@ const MarketData = () => {
 
 			                <Link id="btn-test-three-test"  className="btn btn-grad " to="/connectwallet">
 								{
-									window.innerWidth > 992 ?
+									window.innerWidth > 993 ?
 									// <CurtainBtn mode="creator-hero-btn-color"/>
 									<CurtainBtn mode="noBg" />
 									:null

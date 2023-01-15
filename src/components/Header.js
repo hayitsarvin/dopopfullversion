@@ -6,6 +6,8 @@ import gsap from 'gsap';
 import LocomotiveScroll from 'locomotive-scroll';
 import CurtainBtn from '../helpers/CurtainBtn';
 import { useAppContext } from '../contexts/appcontext';
+
+
 var openHam = false
 var hideMode = false
 function useOutsideAlerter(ref, set) {
@@ -37,7 +39,8 @@ function useOutsideAlerter(ref, set) {
 	  };
 	}, [ref]);
   }
-const Header = () => {
+const Header = ({history}) => {
+	
 	const headerRef = useRef();
 	const { isMobile } = useAppContext();
 const q = gsap.utils.selector(headerRef);
@@ -163,7 +166,7 @@ window.addEventListener('resize', () => {
 						<div className="header__menu">
 							<ul className="d-flex space-x-20">
 								<li >
-									<Link className={location.pathname == "/" ? "color_black active" : "color_black"} to="/">Home</Link>
+									<Link className={location.pathname == "/" ? "color_black active" : "color_black"}  to="/">Home</Link>
 								</li>
 								<li>
 									<Link className={location.pathname == "/explore" ? "color_black active" : "color_black"} to="/explore">Marketplace</Link>
@@ -175,10 +178,10 @@ window.addEventListener('resize', () => {
 									<Link className={location.pathname == "/" ? "color_black active" : "color_black"} to="Profile.html">Profile</Link>
 								</li> */}
 								<li>
-									<Link className={location.pathname == "/creators" ? "color_black active" : "color_black"} to="/creators">Creators</Link>
+									<Link className={location.pathname == "/creators" ? "color_black active" : "color_black"}   to="/creators">Creators</Link>
 								</li>
 								<li>
-									<Link className={location.pathname == "/contact" ? "color_black active" : "color_black"} to="/contact">Contact Us</Link>
+									<Link className={location.pathname == "/contact" ? "color_black active" : "color_black"}  to="/contact">Contact Us</Link>
 								</li>
 								{/* <li>
 									<Link className="color_black" to="/FAQ">FAQ</Link>

@@ -353,7 +353,8 @@ const Home = () => {
         isMobile ? null 
         :
         <ThreeJsSecene />
-        
+
+        // null
        }
 
             <div >

@@ -222,7 +222,7 @@ const Hero = ({MouseMove}) => {
 										
 											if(i === 0){
 												return (
-													<div className="col-lg-3  mobile-hero-single-nft" key={n._id}>
+													<div className="col-lg-3 mobile-hero-single-nft" key={n._id}>
 														<HeroArtCart nft={n} />
 														{
 															
@@ -360,26 +360,49 @@ const Hero = ({MouseMove}) => {
 							{
 								loading ? <Loading />: (
 									nftAuctionList.map((n,i) => {
-										
-											if(i <= 3){
-												return (
-													<div className={i <= 1 ? "col-lg-3 pl-0" : "col-lg-3 pr-0"} id={i == 1 ? "img-position" : ""} key={n._id}>
-														{/* <HeroArtCart nft={n} /> */}
-														<TopGalleryCart nft={n}/>
-														{
-															isMobile ? (
-																i == 0 ? (
-																	<div className="space-x-20 mb-20 mt-30 d-flex justify-content-center hero-btn-div " >
-																	<Link className="btn btn-grad btn-md"
-																		to="/explore">View
-																		market</Link>
-																</div>
+											if(window.innerWidth <= 1400){
+												if(i < 3){
+													return (
+														<div className={i <= 1 ? "col-lg-4 col-xxl-3 pl-0" : "col-lg-4 col-xxl-3 pr-0"} id={i == 1 ? "img-position" : ""} key={n._id}>
+															{/* <HeroArtCart nft={n} /> */}
+															<TopGalleryCart nft={n}/>
+															{
+																isMobile ? (
+																	i == 0 ? (
+																		<div className="space-x-20 mb-20 mt-30 d-flex justify-content-center hero-btn-div " >
+																		<Link className="btn btn-grad btn-md"
+																			to="/explore">View
+																			market</Link>
+																	</div>
+																	) : null
 																) : null
-															) : null
-														}
-													</div>
-												)
+															}
+														</div>
+													)
+												}
+
+											}else {
+												if(i <= 3){
+													return (
+														<div className={i <= 1 ? "col-lg-4 col-xxl-3 pl-0" : "col-lg-4 col-xxl-3 pr-0"} id={i == 1 ? "img-position" : ""} key={n._id}>
+															{/* <HeroArtCart nft={n} /> */}
+															<TopGalleryCart nft={n}/>
+															{
+																isMobile ? (
+																	i == 0 ? (
+																		<div className="space-x-20 mb-20 mt-30 d-flex justify-content-center hero-btn-div " >
+																		<Link className="btn btn-grad btn-md"
+																			to="/explore">View
+																			market</Link>
+																	</div>
+																	) : null
+																) : null
+															}
+														</div>
+													)
+												}
 											}
+											
 										
 											
 

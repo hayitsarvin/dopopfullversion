@@ -46,6 +46,7 @@ import { LocomotiveScrollProvider } from 'react-locomotive-scroll'
 import useLoco from './hooks/useLoco';
 import Mouse from './helpers/Mouse';
 import { useAppContext } from "./contexts/appcontext.js";
+import ThreeJsSecene from './helpers/ThreeJsSecene';
 // import LocomotiveScroll from "locomotive-scroll";
 // import "./locomotive-scroll.css";
 
@@ -56,7 +57,7 @@ function App() {
 
     if (width > 992 ) {
       setMobileFalse();
-    } else if (width < 992 ) setMobileTrue();
+    } else if (width <= 992 ) setMobileTrue();
   }
   useEffect(() => {
     checkForMobileBg();
@@ -148,7 +149,7 @@ imagesLoaded( posts, function() {
       <BuyPopup />
       <Header />
       { isMobile ? null : <Mouse />}
-      
+      {/* <ThreeJsSecene /> */}
       <ScrollToTop >
          
   

@@ -6,7 +6,7 @@ import * as THREE from 'three';
 import { useAppContext } from '../contexts/appcontext';
 import { vertexShader , fragmentShader } from './WebGL';
 
-const ThreeJsSecene = ({row}) => {
+const ThreeJsSecene = ({show=false}) => {
 	const { isMobile } = useAppContext();
 	
 	// var x = window.matchMedia("(max-width: 992px)")
@@ -52,6 +52,7 @@ const ThreeJsSecene = ({row}) => {
     
     useEffect(() => {
 		if(!isMobile){
+			
 			var main;
 			// var content;
 			var container;
@@ -174,7 +175,7 @@ const ThreeJsSecene = ({row}) => {
 					const mouseY = event.screenY;
 					// uniforms.colsrows.value.y = 
 					// const AniSpeed = uniforms.time.value
-					gsap.to(uniforms.colsrows.value , {y : () => 160 * (mouseX / pageWidth) + 80 , duration: 1, ease: 'expo.out'})
+					gsap.to(uniforms.colsrows.value , {y : () => 80 * (mouseX / pageWidth ) + 20  , duration: 1, ease: 'expo.out'})
 					// gsap.to(uniforms.time , {value : AniSpeed * (mouseY / pageHeight) , duration: 1 })
 					// uniforms.time.value =  0
 			
